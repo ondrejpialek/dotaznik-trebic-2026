@@ -95,10 +95,10 @@ s podmínkou v kurzívě. Generátor je rozpozná podle ID prefixu
 *Stránka `page-intro`. Default je následující; alternativy podle `utm_source`
 jsou definovány v JS v `INTRO_VARIANTS`.*
 
-**Nadpis:** Jakou Třebíč chcete?
-**Lead:** Co vás v Třebíči štve a co tu máte rádi?
+**Nadpis:** V jaké Třebíči chcete žít?
+**Lead:** Co vás v našem městě štve a co tu naopak máte rádi?
 
-Píšeme volební program Zelených pro komunální volby. Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro další práci v Třebíči. Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.
+Píšeme volební program pro komunální volby. Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro naši další práci. Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.
 
 Vyplnění zabere asi 6 minut a je anonymní.
 
@@ -112,7 +112,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 **A2. Vyberte až 3 pojmy, které by měly vystihovat Třebíč ZA 10 LET.**
 *(checkbox, max 3)*
 
-- živé | mladé | kulturní | bohaté | klidné | bezpečné | zelené | čisté | cenově dostupné | inovativní | solidární | jiné (s upřesněním)
+- živou | mladou | kulturní | bohatou | klidnou | bezpečnou | zelenou | čistou | cenově dostupnou | inovativní | solidární | jinou (s upřesněním)
 
 **A3. Co jsou silné stránky Třebíče — věci, které tu fungují dobře?**
 *(volný text, volitelné)*
@@ -124,7 +124,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ## BLOK B — HISTORICKÉ CENTRUM A PAMÁTKY
 
-> *Vysvětlivka v dotazníku: Třebíč má dvě památky UNESCO — baziliku sv. Prokopa a židovskou čtvrť — a jedno z největších náměstí v Česku, Karlovo náměstí.*
+> *Vysvětlivka v dotazníku: Třebíč je na od roku 2003 seznamu UNESCO díky unikátnímu komplexu památek - židovské čtvrti a hřbitovu a bazilice sv. Prokopa.*
 
 **B1. Jak jste spokojen/a s tím, jak město pečuje o historické centrum a památky?**
 *(radio)*
@@ -134,21 +134,13 @@ Vyplnění zabere asi 6 minut a je anonymní.
 **B2. Co by historickému centru Třebíče nejvíc pomohlo?**
 *(checkbox, max 3)*
 
-- více obchodů, kaváren a služeb (oživení parteru)
-- méně aut a parkování na náměstí, více prostoru pro lidi
+- více obchodů, kaváren a služeb
+- méně aut a parkování, více prostoru pro lidi
 - opravy fasád, ulic a veřejných prostranství
 - kulturní akce a lepší využití památek
-- lepší propojení centra, židovské čtvrti a baziliky
 - podpora bydlení přímo v centru
 - nevím
 - jiné (s upřesněním)
-
-**B3. Karlovo náměstí dnes z velké části slouží jako parkoviště. Uvítal/a byste, aby se větší část náměstí proměnila na prostor pro lidi (zeleň, posezení, akce)?**
-*(radio)*
-
-- rozhodně ano | spíše ano | spíše ne | rozhodně ne | nemám vyhraněný názor
-
----
 
 ## BLOK C — PRIORITY A VELKÉ PROJEKTY
 
@@ -161,10 +153,9 @@ Vyplnění zabere asi 6 minut a je anonymní.
 - obnova historického centra a památek UNESCO
 - oživení Karlova náměstí a veřejných prostranství
 - revitalizace nábřeží řeky Jihlavy a parků
-- využití brownfieldů (např. areál Borovina) pro bydlení a služby
+- využití brownfieldů pro bydlení a služby
 - rozvoj cykloinfrastruktury a bezpečných cest
 - zkvalitnění a kapacita základních a středních škol
-- kroužky, příměstské tábory a volnočasové aktivity pro děti
 - rozvoj služeb pro seniory
 - zvládnutí dopadů dostavby Dukovan na město
 
@@ -178,7 +169,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ## BLOK D — DUKOVANY A ROZVOJ REGIONU
 
-> *Vysvětlivka v dotazníku: V Dukovanech se připravuje stavba nových jaderných bloků. Je to jedna z největších staveb v ČR a výrazně ovlivní celé Třebíčsko — pracovní místa, bydlení, dopravu i veřejné služby.*
+> *Vysvětlivka v dotazníku: V Dukovanech se připravuje stavba nových jaderných bloků, což výrazně ovlivní celé Třebíčsko — pracovní místa, bydlení, dopravu i veřejné služby.*
 
 **D1. Jak vnímáte plánovanou dostavbu jaderné elektrárny Dukovany?**
 *(radio)*
@@ -251,16 +242,11 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 - rozhodně pro — ulice by měly sloužit lidem, ne parkujícím autům
 - spíše pro, záleží ale na konkrétní části města a dostupnosti alternativ
-- spíše proti — obávám se dopadů na dostupnost centra
+- spíše proti — obávám se dopadů na dostupnost parkování
 - rozhodně proti — parkovací místa v centru je nutné zachovat
 - nemám vyhraněný názor
 
-**E10. Mělo by město aktivně regulovat vizuální smog v Třebíči — billboardy, neuspořádané reklamy, plachty a výlohy, které narušují vzhled ulic?**
-*(radio)*
-
-- rozhodně ano | spíše ano | spíše ne | rozhodně ne | nepřemýšlel/a jsem o tom
-
-**E11. Třebíčí denně projíždí tranzitní doprava. Jak důležité je pro vás dokončení obchvatu města?**
+**E10. Třebíčí denně projíždí tranzitní doprava. Jak důležité je pro vás dokončení obchvatu města?**
 *(radio)*
 
 - velmi důležité | spíše důležité | spíše nedůležité | vůbec ne | nemám vyhraněný názor
@@ -287,11 +273,9 @@ Vyplnění zabere asi 6 minut a je anonymní.
 *(checkbox, max 3 — zobrazí se, pokud F1a = velmi/spíše vážný NEBO F1b = přímo já / blízkých)*
 
 - stavět vlastní nájemní byty
-- více využít prázdné byty ve vlastnictví města
+- využít pro přestavbu na bydlení nemovitosti ve vlastnictví města
 - podporovat družstevní výstavbu
 - podmínit větší developerské projekty podílem dostupných bytů
-- využít brownfieldy a opuštěné areály pro bydlení
-- regulovat výši nájmů v obecních bytech
 - nevím
 - jiné (s upřesněním)
 
@@ -417,33 +401,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ---
 
-## BLOK K — CELOSPOLEČENSKÝ POHLED
-
-**K2. Jak velký vliv má celostátní politická situace na to, koho zvolíte do třebíčského zastupitelstva?**
-*(radio)*
-
-- velký — komunální volby vnímám v kontextu celostátního dění
-- částečný — záleží mi na obou rovinách
-- žádný — komunální a celostátní politiku striktně odděluji
-- nevím
-
-**K1. Které z následujících jevů vás osobně znepokojují?**
-*(checkbox, max 3 — zobrazí se, pokud K2 ≠ „žádný")*
-
-- oslabování demokracie a právního státu v ČR
-- geopolitická nestabilita a nárůst autoritářství
-- korupce a klientelismus ve veřejné správě
-- zdražování, inflace a růst nákladů na bydlení
-- války a násilí ve světě
-- klimatická změna a extrémní výkyvy počasí
-- extremismus a polarizace české společnosti
-- migrace
-- žádné z výše uvedených výrazněji
-- jiné (s upřesněním)
-
----
-
-## BLOK L — TŘEBÍČ OSOBNĚ
+## BLOK K — TŘEBÍČ OSOBNĚ
 
 **L1. Co si v Třebíči ze všeho nejvíce přejete?**
 *(volný text, volitelné)*
@@ -487,8 +445,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 **N5. Část Třebíče, kde bydlím**
 *(rozbalovací menu — placeholder: „— Vyberte část Třebíče —")*
 
-- **Centrální části:** Vnitřní Město | Stařečka | Jejkov | Podklášteří | Zámostí (židovská čtvrť) | Nové Dvory
-- **Ostatní části:** Horka-Domky | Borovina | Týn | Nové Město | Kočičina | Hájek | Budíkovice | Pocoucov | Ptáčov | Račerovice | Řípov | Slavice | Sokolí | bydlím mimo Třebíč
+- Vnitřní Město | Stařečka | Jejkov | Podklášteří | Zámostí | Nové Dvory | Horka-Domky | Borovina | Týn | Nové Město | Kočičina | Hájek | Budíkovice | Pocoucov | Ptáčov | Račerovice | Řípov | Slavice | Sokolí | bydlím mimo Třebíč
 
 **N6. Koho jste volili v posledních sněmovních volbách (2025)?**
 *(radio, volitelné)*
