@@ -1,4 +1,4 @@
-name: Deploy na jakebrno.cz
+name: Deploy na jakoutrebic.cz
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
             set net:timeout 60;
             set net:max-retries 5;
             set net:reconnect-interval-base 5;
-            open -u 'jakebrno.cz','$FTP_PASSWORD' ftp://62.109.154.45;
-            mirror -R --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob '*.md' ./ /public_html/;
+            open -u 'www.jakoutrebic.cz','$FTP_PASSWORD' ftp://ftpx.forpsi.com;
+            mirror -R --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob '*.md' ./ /www/;
             bye
           "
