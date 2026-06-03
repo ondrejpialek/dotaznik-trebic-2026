@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velký dotazník o Brně — Jaké Brno chcete?</title>
-  <meta name="description" content="Co vás v Brně štve a co naopak za žádnou cenu nesmí zmizet? Z odpovědí Brňanů a Brňanek vznikne volební program Zelených pro komunální volby v říjnu 2026. Vyplnění zabere asi 6 minut.">
+  <title>V jaké Třebíči chcete žít? — dotazník o Třebíči</title>
+  <meta name="description" content="Co vás v Třebíči štve a co tu naopak máte rádi? Z odpovědí vznikne volební program pro komunální volby. Vyplnění zabere asi 6 minut.">
 
   <!-- Open Graph (Facebook, Messenger, LinkedIn…) -->
-  <meta property="og:title" content="Velký dotazník o Brně — Jaké Brno chcete?">
-  <meta property="og:description" content="Co vás v Brně štve a co naopak za žádnou cenu nesmí zmizet? Z odpovědí vznikne volební program Zelených pro komunální volby v říjnu 2026.">
-  <meta property="og:image" content="https://jakebrno.cz/og_image.png">
+  <meta property="og:title" content="V jaké Třebíči chcete žít? — dotazník o Třebíči">
+  <meta property="og:description" content="Co vás v Třebíči štve a co tu naopak máte rádi? Z odpovědí vznikne volební program pro komunální volby.">
+  <meta property="og:image" content="og_image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Velký dotazník o Brně — Zelení Brno">
-  <meta property="og:url" content="https://jakebrno.cz/">
+  <meta property="og:image:alt" content="V jaké Třebíči chcete žít?">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Jaké Brno chcete?">
+  <meta property="og:site_name" content="V jaké Třebíči chcete žít?">
   <meta property="og:locale" content="cs_CZ">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Velký dotazník o Brně — Jaké Brno chcete?">
-  <meta name="twitter:description" content="Co vás v Brně štve a co naopak za žádnou cenu nesmí zmizet? Z odpovědí vznikne volební program Zelených pro komunální volby v říjnu 2026.">
-  <meta name="twitter:image" content="https://jakebrno.cz/og_image.png">
-  <meta name="twitter:image:alt" content="Velký dotazník o Brně — Zelení Brno">
+  <meta name="twitter:title" content="V jaké Třebíči chcete žít? — dotazník o Třebíči">
+  <meta name="twitter:description" content="Co vás v Třebíči štve a co tu naopak máte rádi? Z odpovědí vznikne volební program pro komunální volby.">
+  <meta name="twitter:image" content="og_image.png">
+  <meta name="twitter:image:alt" content="V jaké Třebíči chcete žít?">
   <style>
     :root {
       --primary: #557A53;
@@ -738,7 +737,7 @@
 ══════════════════════════════════════════════════════════ -->
 <div class="header">
   <div class="header-top">
-    <div class="logo">Jaké Brno chcete?</div>
+    <div class="logo">V jaké Třebíči chcete žít?</div>
     <div class="step-indicator" id="stepIndicator"></div>
   </div>
   <div class="progress-bar">
@@ -753,9 +752,9 @@
 ══════════════════════════════════════════════════════════ -->
 <div class="page active" id="page-intro">
   <div class="intro-card" id="intro-card">
-    <h1>Jaké Brno chcete?</h1>
-    <p class="lead">Co vás v Brně štve a co tu máte rádi?</p>
-    <p>Píšeme volební program Zelených pro říjnové volby. Hlavní sběr odpovědí jsme uzavřeli 25. května, ale dotazník necháváme dál otevřený — vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro další práci v Brně. Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.</p>
+    <h1>V jaké Třebíči chcete žít?</h1>
+    <p class="lead">Co vás v našem městě štve a co tu naopak máte rádi?</p>
+    <p>Píšeme volební program pro komunální volby. Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro naši další práci. Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.</p>
     <p>Vyplnění zabere asi 6 minut a je anonymní.</p>
 
     <button class="btn-start" onclick="goNext()">Vyplnit dotazník →</button>
@@ -765,72 +764,105 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     BLOK A — BRNO ZA 10 LET
+     BLOK A — TŘEBÍČ ZA 10 LET
 ══════════════════════════════════════════════════════════ -->
 <div class="page" id="page-a">
-  <div class="block-title">Brno za 10 let</div>
+  <div class="block-title">Třebíč za 10 let</div>
 
   <!-- A2 -->
   <div class="question">
-    <div class="question-text">A2. Vyberte až 3 pojmy, které by měly vystihovat Brno ZA 10 LET.</div>
+    <div class="question-text">A2. Vyberte až 3 pojmy, které by měly vystihovat Třebíč ZA 10 LET.</div>
     <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
     <div class="options" id="a2-options" data-max="3">
-      <label class="option"><input type="checkbox" name="a2" value="živé"><span class="option-label">živé</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="mladé"><span class="option-label">mladé</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="živou"><span class="option-label">živou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="mladou"><span class="option-label">mladou</span></label>
       <label class="option"><input type="checkbox" name="a2" value="kulturní"><span class="option-label">kulturní</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="bohaté"><span class="option-label">bohaté</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="klidné"><span class="option-label">klidné</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="bezpečné"><span class="option-label">bezpečné</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="zelené"><span class="option-label">zelené</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="čisté"><span class="option-label">čisté</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="cenově dostupné"><span class="option-label">cenově dostupné</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="bohatou"><span class="option-label">bohatou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="klidnou"><span class="option-label">klidnou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="bezpečnou"><span class="option-label">bezpečnou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="zelenou"><span class="option-label">zelenou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="čistou"><span class="option-label">čistou</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="cenově dostupnou"><span class="option-label">cenově dostupnou</span></label>
       <label class="option"><input type="checkbox" name="a2" value="inovativní"><span class="option-label">inovativní</span></label>
       <label class="option"><input type="checkbox" name="a2" value="solidární"><span class="option-label">solidární</span></label>
-      <label class="option"><input type="checkbox" name="a2" value="jiné"><span class="option-label">jiné</span></label>
+      <label class="option"><input type="checkbox" name="a2" value="jinou"><span class="option-label">jinou</span></label>
       <textarea class="other-input" id="a2-other" placeholder="Upřesněte…"></textarea>
     </div>
   </div>
 
   <!-- A3 -->
   <div class="question">
-    <div class="question-text">A3. Co jsou silné stránky Brna — věci, které tu fungují dobře?</div>
+    <div class="question-text">A3. Co jsou silné stránky Třebíče — věci, které tu fungují dobře?</div>
     <div class="question-hint">Volitelná otázka</div>
     <textarea id="a3" placeholder="Napište prosím svůj názor…"></textarea>
   </div>
 
   <!-- A4 -->
   <div class="question">
-    <div class="question-text">A4. Co považujete za největší problémy Brna a co byste současnému vedení nejvíce vytknul/a?</div>
+    <div class="question-text">A4. Co považujete za největší problémy Třebíče a co byste současnému vedení nejvíce vytknul/a?</div>
     <textarea id="a4" placeholder="Napište prosím svůj názor…"></textarea>
   </div>
 </div>
 
-<!-- BLOK B odstraněn (B3 přesunuto do bloku N jako N7) -->
+<!-- ══════════════════════════════════════════════════════════
+     BLOK B — HISTORICKÉ CENTRUM A PAMÁTKY
+══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-b">
+  <div class="block-title">Historické centrum a památky</div>
+
+  <div class="block-note">Třebíč je od roku 2003 na seznamu UNESCO díky unikátnímu komplexu památek — židovské čtvrti a hřbitovu a bazilice sv. Prokopa.</div>
+
+  <!-- B1 -->
+  <div class="question">
+    <div class="question-text">B1. Jak jste spokojen/a s tím, jak město pečuje o historické centrum a památky?</div>
+    <div class="options" id="b1-options">
+      <label class="option"><input type="radio" name="b1" value="velmi spokojen/a"><span class="option-label">velmi spokojen/a</span></label>
+      <label class="option"><input type="radio" name="b1" value="spíše spokojen/a"><span class="option-label">spíše spokojen/a</span></label>
+      <label class="option"><input type="radio" name="b1" value="spíše nespokojen/a"><span class="option-label">spíše nespokojen/a</span></label>
+      <label class="option"><input type="radio" name="b1" value="nespokojen/a"><span class="option-label">nespokojen/a</span></label>
+      <label class="option"><input type="radio" name="b1" value="nedokážu posoudit"><span class="option-label">nedokážu posoudit</span></label>
+    </div>
+  </div>
+
+  <!-- B2 -->
+  <div class="question">
+    <div class="question-text">B2. Co by historickému centru Třebíče nejvíc pomohlo?</div>
+    <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
+    <div class="options" id="b2-options" data-max="3">
+      <label class="option"><input type="checkbox" name="b2" value="obchody a služby"><span class="option-label">více obchodů, kaváren a služeb</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="méně aut"><span class="option-label">méně aut a parkování, více prostoru pro lidi</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="opravy"><span class="option-label">opravy fasád, ulic a veřejných prostranství</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="kultura"><span class="option-label">kulturní akce a lepší využití památek</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="bydlení v centru"><span class="option-label">podpora bydlení přímo v centru</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="nevím"><span class="option-label">nevím</span></label>
+      <label class="option"><input type="checkbox" name="b2" value="jiné"><span class="option-label">jiné</span></label>
+      <textarea class="other-input" id="b2-other" placeholder="Upřesněte…"></textarea>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════════════════
-     BLOK C — VELKÉ PROJEKTY
+     BLOK C — PRIORITY A VELKÉ PROJEKTY
 ══════════════════════════════════════════════════════════ -->
 <div class="page" id="page-c">
-  <div class="block-title">Velké projekty</div>
+  <div class="block-title">Priority a velké projekty</div>
 
   <!-- C1 -->
   <div class="question">
-    <div class="question-text">C1. Které tři záměry jsou pro vás jako obyvatele Brna nejdůležitější?</div>
+    <div class="question-text">C1. Které tři záměry jsou pro vás jako obyvatele Třebíče nejdůležitější?</div>
     <div class="question-hint">Vyberte nejvýše 3 možnosti (volitelná otázka)</div>
     <div class="options" id="c1-options" data-max="3">
-      <label class="option"><input type="checkbox" name="c1" value="nádraží"><span class="option-label">Přesun nádraží a rozvoj Jižního centra</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="stadiony"><span class="option-label">Nové sportovní stadiony (multifunkční hala, fotbalový stadion)</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="lanovka"><span class="option-label">Lanovka Pisárky–Bohunice</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="bydlení"><span class="option-label">Dostupné nájemní bydlení</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="tramvaje a MHD"><span class="option-label">Obnova a rozšíření tramvajové sítě a MHD</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="SJKD"><span class="option-label">Stavba podzemní dráhy (SJKD — podzemní železniční spojení sever–jih)</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="parky"><span class="option-label">Revitalizace parků a veřejných prostranství</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="cykloinfrastruktura"><span class="option-label">Rozvoj cykloinfrastruktury</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="ZŠ"><span class="option-label">Zkvalitnění základních škol</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="SŠ"><span class="option-label">Zvýšení kapacity středních škol</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="kroužky a tábory"><span class="option-label">Kroužky, příměstské tábory a volnočasové aktivity pro děti</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="vizuální smog"><span class="option-label">Regulace vizuálního smogu a kvalita veřejného prostoru</span></label>
-      <label class="option"><input type="checkbox" name="c1" value="senioři"><span class="option-label">Rozvoj služeb pro seniory</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="obchvat"><span class="option-label">dokončení obchvatu města (silnice I/23) a odvedení tranzitní dopravy</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="lékaři"><span class="option-label">dostatek lékařů a zdravotní péče (praktici, zubaři, specialisté)</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="bydlení"><span class="option-label">dostupné nájemní bydlení</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="UNESCO"><span class="option-label">obnova historického centra a památek UNESCO</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="Karlovo náměstí"><span class="option-label">oživení Karlova náměstí a veřejných prostranství</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="nábřeží"><span class="option-label">revitalizace nábřeží řeky Jihlavy a parků</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="brownfieldy"><span class="option-label">využití brownfieldů pro bydlení a služby</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="cykloinfrastruktura"><span class="option-label">rozvoj cykloinfrastruktury a bezpečných cest</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="školy"><span class="option-label">zkvalitnění a kapacita základních a středních škol</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="senioři"><span class="option-label">rozvoj služeb pro seniory</span></label>
+      <label class="option"><input type="checkbox" name="c1" value="Dukovany"><span class="option-label">zvládnutí dopadů dostavby Dukovan na město</span></label>
     </div>
   </div>
 
@@ -843,9 +875,55 @@
 
   <!-- C2 -->
   <div class="question">
-    <div class="question-text">C2. Kde má Brno největší nevyužitý potenciál?</div>
+    <div class="question-text">C2. Kde má Třebíč největší nevyužitý potenciál?</div>
     <div class="question-hint">Co by mohlo fungovat lépe, ale zatím se to nedaří? (volitelná otázka)</div>
     <textarea id="c2" placeholder="Napište prosím svůj názor…"></textarea>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOK D — DUKOVANY A ROZVOJ REGIONU
+══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-d">
+  <div class="block-title">Dukovany a rozvoj regionu</div>
+
+  <div class="block-note">V Dukovanech se připravuje stavba nových jaderných bloků, což výrazně ovlivní celé Třebíčsko — pracovní místa, bydlení, dopravu i veřejné služby.</div>
+
+  <!-- D1 -->
+  <div class="question">
+    <div class="question-text">D1. Jak vnímáte plánovanou dostavbu jaderné elektrárny Dukovany?</div>
+    <div class="options" id="d1-options">
+      <label class="option"><input type="radio" name="d1" value="jednoznačně pozitivně"><span class="option-label">jednoznačně pozitivně — je to příležitost pro region</span></label>
+      <label class="option"><input type="radio" name="d1" value="spíše pozitivně"><span class="option-label">spíše pozitivně, ale záleží na zvládnutí dopadů</span></label>
+      <label class="option"><input type="radio" name="d1" value="smíšené pocity"><span class="option-label">mám smíšené pocity</span></label>
+      <label class="option"><input type="radio" name="d1" value="spíše negativně"><span class="option-label">spíše negativně</span></label>
+      <label class="option"><input type="radio" name="d1" value="jednoznačně negativně"><span class="option-label">jednoznačně negativně</span></label>
+      <label class="option"><input type="radio" name="d1" value="nevyhraněný"><span class="option-label">nemám vyhraněný názor</span></label>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="question">
+    <div class="question-text">D2. Čeho se v souvislosti s dostavbou Dukovan nejvíce obáváte nebo co by mělo město ohlídat?</div>
+    <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
+    <div class="options" id="d2-options" data-max="3">
+      <label class="option"><input type="checkbox" name="d2" value="bydlení"><span class="option-label">tlak na ceny a dostupnost bydlení (příliv pracovníků)</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="doprava"><span class="option-label">přetížení dopravy a stav silnic</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="veřejné služby"><span class="option-label">kapacita škol, školek a zdravotní péče</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="životní prostředí"><span class="option-label">dopady na životní prostředí a krajinu</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="přínos pro region"><span class="option-label">aby z toho region a město reálně profitovaly (peníze a práce pro místní)</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="bezpečnost"><span class="option-label">bezpečnost</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="nic"><span class="option-label">nic zásadního mě netrápí</span></label>
+      <label class="option"><input type="checkbox" name="d2" value="jiné"><span class="option-label">jiné</span></label>
+      <textarea class="other-input" id="d2-other" placeholder="Upřesněte…"></textarea>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="question">
+    <div class="question-text">D3. Jak by podle vás mělo město využít příležitost spojenou s rozvojem Dukovan?</div>
+    <div class="question-hint">Volitelná otázka</div>
+    <textarea id="d3" placeholder="Napište prosím svůj názor…"></textarea>
   </div>
 </div>
 
@@ -857,11 +935,11 @@
 
   <!-- E1 -->
   <div class="question">
-    <div class="question-text">E1. Jakými způsoby se pravidelně pohybujete po Brně?</div>
+    <div class="question-text">E1. Jakými způsoby se pravidelně pohybujete po Třebíči?</div>
     <div class="question-hint">Vyberte vše, co platí</div>
     <div class="options" id="e1-options">
       <label class="option"><input type="checkbox" name="e1" value="auto"><span class="option-label">autem (jako řidič/ka)</span></label>
-      <label class="option"><input type="checkbox" name="e1" value="mhd"><span class="option-label">MHD (tramvaj, autobus, trolejbus)</span></label>
+      <label class="option"><input type="checkbox" name="e1" value="mhd"><span class="option-label">MHD (městské autobusy)</span></label>
       <label class="option"><input type="checkbox" name="e1" value="kolo"><span class="option-label">na kole nebo koloběžce</span></label>
       <label class="option"><input type="checkbox" name="e1" value="pěšky"><span class="option-label">pěšky (jako hlavní způsob pohybu, nejen přesun na zastávku)</span></label>
       <label class="option"><input type="checkbox" name="e1" value="jiné"><span class="option-label">jinak</span></label>
@@ -874,7 +952,7 @@
     <div class="question-text">E2. Co by vás motivovalo jezdit autem méně nebo ho omezit?</div>
     <div class="question-hint">Vyberte vše, co platí</div>
     <div class="options" id="e2-options">
-      <label class="option"><input type="checkbox" name="e2" value="lepší MHD"><span class="option-label">lepší a rychlejší MHD (frekvence spojů, přímé linky)</span></label>
+      <label class="option"><input type="checkbox" name="e2" value="lepší MHD"><span class="option-label">lepší a častější spoje MHD (frekvence, přímé linky)</span></label>
       <label class="option"><input type="checkbox" name="e2" value="cykloinfrastruktura"><span class="option-label">bezpečnější a lépe propojená cykloinfrastruktura</span></label>
       <label class="option"><input type="checkbox" name="e2" value="P+R"><span class="option-label">více záchytných parkovišť na okraji města (P+R)</span></label>
       <label class="option"><input type="checkbox" name="e2" value="sdílená mobilita"><span class="option-label">lepší sdílená mobilita (sdílená kola, koloběžky, auta)</span></label>
@@ -886,7 +964,7 @@
 
   <!-- E3a + E3b -->
   <div class="question">
-    <div class="question-text">E3a. Setkáváte se při pohybu pěšky v Brně s problémy?</div>
+    <div class="question-text">E3a. Setkáváte se při pohybu pěšky v Třebíči s problémy?</div>
     <div class="options" id="e3a-options">
       <label class="option"><input type="radio" name="e3a" value="ano"><span class="option-label">ano, pravidelně</span></label>
       <label class="option"><input type="radio" name="e3a" value="občas"><span class="option-label">občas</span></label>
@@ -914,38 +992,25 @@
 
   <!-- E8a -->
   <div class="question">
-    <div class="question-text">E8a. Některá evropská města rozšiřují chodníky, přidávají zeleň, lavičky a místa k posezení namísto části parkovacích míst. Jak byste přijal/a takovou přeměnu a rozšíření pěších zón v centru Brna?</div>
+    <div class="question-text">E8a. Některá města rozšiřují chodníky, přidávají zeleň, lavičky a místa k posezení namísto části parkovacích míst. Jak byste přijal/a takovou přeměnu a rozšíření pěších zón v centru Třebíče?</div>
     <div class="options" id="e8a-options">
       <label class="option"><input type="radio" name="e8a" value="rozhodně pro"><span class="option-label">rozhodně pro — ulice by měly sloužit lidem, ne parkujícím autům</span></label>
       <label class="option"><input type="radio" name="e8a" value="spíše pro"><span class="option-label">spíše pro, záleží ale na konkrétní části města a dostupnosti alternativ</span></label>
-      <label class="option"><input type="radio" name="e8a" value="spíše proti"><span class="option-label">spíše proti — obávám se dopadů na dostupnost centra</span></label>
+      <label class="option"><input type="radio" name="e8a" value="spíše proti"><span class="option-label">spíše proti — obávám se dopadů na dostupnost parkování</span></label>
       <label class="option"><input type="radio" name="e8a" value="rozhodně proti"><span class="option-label">rozhodně proti — parkovací místa v centru je nutné zachovat</span></label>
       <label class="option"><input type="radio" name="e8a" value="nevyhraněný"><span class="option-label">nemám vyhraněný názor</span></label>
     </div>
   </div>
 
-  <!-- E9 — Veveří jako pěší zóna -->
+  <!-- E10 — obchvat -->
   <div class="question">
-    <div class="question-text">E9. Dokázali byste si představit, že by pěší zónou byla například dolní část ulice Veveří?</div>
-    <div class="options" id="e9-options">
-      <label class="option"><input type="radio" name="e9" value="rozhodně ano"><span class="option-label">rozhodně ano</span></label>
-      <label class="option"><input type="radio" name="e9" value="spíše ano"><span class="option-label">spíše ano</span></label>
-      <label class="option"><input type="radio" name="e9" value="spíše ne"><span class="option-label">spíše ne</span></label>
-      <label class="option"><input type="radio" name="e9" value="rozhodně ne"><span class="option-label">rozhodně ne</span></label>
-      <label class="option"><input type="radio" name="e9" value="nevyhraněný"><span class="option-label">nemám vyhraněný názor</span></label>
-      <label class="option"><input type="radio" name="e9" value="neznám"><span class="option-label">neznám tu ulici dobře</span></label>
-    </div>
-  </div>
-
-  <!-- E10 — vizuální smog -->
-  <div class="question">
-    <div class="question-text">E10. Mělo by město aktivně regulovat vizuální smog v Brně — billboardy, neuspořádané reklamy, plachty a výlohy, které narušují vzhled ulic?</div>
+    <div class="question-text">E10. Třebíčí denně projíždí tranzitní doprava. Jak důležité je pro vás dokončení obchvatu města?</div>
     <div class="options" id="e10-options">
-      <label class="option"><input type="radio" name="e10" value="rozhodně ano"><span class="option-label">rozhodně ano</span></label>
-      <label class="option"><input type="radio" name="e10" value="spíše ano"><span class="option-label">spíše ano</span></label>
-      <label class="option"><input type="radio" name="e10" value="spíše ne"><span class="option-label">spíše ne</span></label>
-      <label class="option"><input type="radio" name="e10" value="rozhodně ne"><span class="option-label">rozhodně ne</span></label>
-      <label class="option"><input type="radio" name="e10" value="nepřemýšlel"><span class="option-label">nepřemýšlel/a jsem o tom</span></label>
+      <label class="option"><input type="radio" name="e10" value="velmi důležité"><span class="option-label">velmi důležité</span></label>
+      <label class="option"><input type="radio" name="e10" value="spíše důležité"><span class="option-label">spíše důležité</span></label>
+      <label class="option"><input type="radio" name="e10" value="spíše nedůležité"><span class="option-label">spíše nedůležité</span></label>
+      <label class="option"><input type="radio" name="e10" value="vůbec ne"><span class="option-label">vůbec ne</span></label>
+      <label class="option"><input type="radio" name="e10" value="nevyhraněný"><span class="option-label">nemám vyhraněný názor</span></label>
     </div>
   </div>
 </div>
@@ -956,11 +1021,11 @@
 <div class="page" id="page-f">
   <div class="block-title">Bydlení</div>
 
-  <div class="block-note">Dostupností bydlení máme na mysli dvě věci: jestli v Brně jde sehnat byt, který vám vyhovuje, a jestli se dá z běžného příjmu zaplatit.</div>
+  <div class="block-note">Dostupností bydlení máme na mysli dvě věci: jestli v Třebíči jde sehnat byt, který vám vyhovuje, a jestli se dá z běžného příjmu zaplatit.</div>
 
   <!-- F1a -->
   <div class="question">
-    <div class="question-text">F1a. Jak vážný problém je podle vás dostupnost bydlení v Brně?</div>
+    <div class="question-text">F1a. Jak vážný problém je podle vás dostupnost bydlení v Třebíči?</div>
     <div class="options" id="f1a-options">
       <label class="option"><input type="radio" name="f1a" value="velmi vážný"><span class="option-label">velmi vážný</span></label>
       <label class="option"><input type="radio" name="f1a" value="spíše vážný"><span class="option-label">spíše vážný</span></label>
@@ -972,7 +1037,7 @@
 
   <!-- F1b -->
   <div class="question">
-    <div class="question-text">F1b. Řešíte vy nebo někdo z vašich blízkých problém s bydlením v Brně — ať už to je shánění bytu, nebo problém ho zaplatit?</div>
+    <div class="question-text">F1b. Řešíte vy nebo někdo z vašich blízkých problém s bydlením v Třebíči — ať už to je shánění bytu, nebo problém ho zaplatit?</div>
     <div class="options" id="f1b-options">
       <label class="option"><input type="radio" name="f1b" value="přímo já"><span class="option-label">přímo já</span></label>
       <label class="option"><input type="radio" name="f1b" value="blízkých"><span class="option-label">ano, někdo z mých blízkých</span></label>
@@ -980,17 +1045,15 @@
     </div>
   </div>
 
-  <!-- F3 — conditional: F1a = velmi závažné nebo spíše závažné -->
+  <!-- F3 — conditional: F1a = velmi/spíše vážný nebo F1b = přímo já / blízkých -->
   <div class="question conditional hidden" id="f3-question">
     <div class="question-text">F3. Co by město mělo dělat pro zvýšení dostupnosti bydlení?</div>
     <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
     <div class="options" id="f3-options" data-max="3">
       <label class="option"><input type="checkbox" name="f3" value="nájemní byty"><span class="option-label">stavět vlastní nájemní byty</span></label>
-      <label class="option"><input type="checkbox" name="f3" value="prázdné byty"><span class="option-label">více využít prázdné byty ve vlastnictví města</span></label>
+      <label class="option"><input type="checkbox" name="f3" value="přestavba"><span class="option-label">využít pro přestavbu na bydlení nemovitosti ve vlastnictví města</span></label>
       <label class="option"><input type="checkbox" name="f3" value="družstevní výstavba"><span class="option-label">podporovat družstevní výstavbu</span></label>
       <label class="option"><input type="checkbox" name="f3" value="podíl dostupných bytů"><span class="option-label">podmínit větší developerské projekty podílem dostupných bytů</span></label>
-      <label class="option"><input type="checkbox" name="f3" value="regulace nájmů"><span class="option-label">regulovat výši nájmů v obecních bytech</span></label>
-      <label class="option"><input type="checkbox" name="f3" value="airbnb"><span class="option-label">regulovat krátkodobé pronájmy typu Airbnb v centrálních částech města</span></label>
       <label class="option"><input type="checkbox" name="f3" value="nevím"><span class="option-label">nevím</span></label>
       <label class="option"><input type="checkbox" name="f3" value="jiné"><span class="option-label">jiné</span></label>
       <textarea class="other-input" id="f3-other" placeholder="Upřesněte…"></textarea>
@@ -1022,7 +1085,7 @@
 
     <!-- G1a — conditional: předškolní věk -->
     <div class="question conditional hidden" id="g1a-question">
-      <div class="question-text">G1a. Zaznamenali jste problémy s dostupností míst ve školce v Brně?</div>
+      <div class="question-text">G1a. Zaznamenali jste problémy s dostupností míst ve školce v Třebíči?</div>
       <div class="options" id="g1a-options">
         <label class="option"><input type="radio" name="g1a" value="ano, přímo u nás"><span class="option-label">ano, přímo u nás</span></label>
         <label class="option"><input type="radio" name="g1a" value="ano, v okolí nebo u známých"><span class="option-label">ano, v okolí nebo u známých</span></label>
@@ -1032,7 +1095,7 @@
 
     <!-- G1b — conditional: ZŠ věk -->
     <div class="question conditional hidden" id="g1b-question">
-      <div class="question-text">G1b. Jak hodnotíte dostupnost a kvalitu základních škol ve vaší části Brna?</div>
+      <div class="question-text">G1b. Jak hodnotíte dostupnost a kvalitu základních škol ve vaší části Třebíče?</div>
       <div class="options" id="g1b-options">
         <label class="option"><input type="radio" name="g1b" value="spokojený/á s obojím"><span class="option-label">jsem spokojený/á s dostupností i kvalitou</span></label>
         <label class="option"><input type="radio" name="g1b" value="kapacita ok, kvalita se liší"><span class="option-label">kapacita je dobrá, ale kvalita škol se liší</span></label>
@@ -1044,7 +1107,7 @@
 
     <!-- G1c — conditional: ZŠ NEBO SŠ věk -->
     <div class="question conditional hidden" id="g1c-question">
-      <div class="question-text">G1c. Narazili jste vy nebo vaši blízcí na problém s kapacitou středních škol v Brně (ať už při hledání pro vlastní dítě, nebo v okolí)?</div>
+      <div class="question-text">G1c. Narazili jste vy nebo vaši blízcí na problém s nabídkou nebo kapacitou středních škol v Třebíči (ať už při hledání pro vlastní dítě, nebo v okolí)?</div>
       <div class="options" id="g1c-options">
         <label class="option"><input type="radio" name="g1c" value="ano, přímo u nás"><span class="option-label">ano, přímo u nás</span></label>
         <label class="option"><input type="radio" name="g1c" value="ano, v okolí nebo u známých"><span class="option-label">ano, v okolí nebo u známých</span></label>
@@ -1055,12 +1118,12 @@
 
     <!-- G2 -->
     <div class="question">
-      <div class="question-text">G2. Co pro rodiny s dětmi v Brně nejvíce chybí nebo potřebuje zlepšit?</div>
+      <div class="question-text">G2. Co pro rodiny s dětmi v Třebíči nejvíce chybí nebo potřebuje zlepšit?</div>
       <div class="question-hint">Vyberte vše, co platí</div>
       <div class="options" id="g2-options">
         <label class="option"><input type="checkbox" name="g2" value="jesle a školky"><span class="option-label">dostatečná kapacita cenově dostupných jeslí, školek a dětských skupin</span></label>
         <label class="option"><input type="checkbox" name="g2" value="základní školy"><span class="option-label">kapacita a kvalita základních škol</span></label>
-        <label class="option"><input type="checkbox" name="g2" value="střední školy"><span class="option-label">kapacita středních škol</span></label>
+        <label class="option"><input type="checkbox" name="g2" value="střední školy"><span class="option-label">nabídka a kapacita středních škol</span></label>
         <label class="option"><input type="checkbox" name="g2" value="hřiště"><span class="option-label">dětská hřiště a bezpečné veřejné prostory</span></label>
         <label class="option"><input type="checkbox" name="g2" value="bezpečné cesty"><span class="option-label">bezpečné cesty do školy (chodníky, přechody, cyklostezky)</span></label>
         <label class="option"><input type="checkbox" name="g2" value="kroužky"><span class="option-label">kroužky, zájmové a volnočasové aktivity pro děti</span></label>
@@ -1079,7 +1142,7 @@
         <label class="option"><input type="checkbox" name="g3" value="příspěvek na tábory"><span class="option-label">finanční příspěvek na tábory v přírodě a příměstské tábory</span></label>
         <label class="option"><input type="checkbox" name="g3" value="tábory od města"><span class="option-label">příměstské tábory pořádané přímo městem nebo jeho organizacemi</span></label>
         <label class="option"><input type="checkbox" name="g3" value="školní družiny"><span class="option-label">rozšíření školních družin a klubů v době prázdnin</span></label>
-        <label class="option"><input type="checkbox" name="g3" value="databáze táborů"><span class="option-label">přehledná databáze dostupných táborů a aktivit v Brně</span></label>
+        <label class="option"><input type="checkbox" name="g3" value="databáze táborů"><span class="option-label">přehledná databáze dostupných táborů a aktivit v Třebíči</span></label>
         <label class="option"><input type="checkbox" name="g3" value="nepotřebuji"><span class="option-label">nepotřebuji v tomto ohledu pomoc — péči mám zajištěnou</span></label>
         <label class="option"><input type="checkbox" name="g3" value="město by se tím nezabývalo"><span class="option-label">město by se tím zabývat nemělo</span></label>
         <label class="option"><input type="checkbox" name="g3" value="jiné"><span class="option-label">jiné</span></label>
@@ -1090,6 +1153,46 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
+     BLOK J — ZDRAVOTNÍ PÉČE
+══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-j">
+  <div class="block-title">Zdravotní péče</div>
+
+  <div class="block-note">Na Třebíčsku dlouhodobě chybí lékaři — praktici, zubaři, dětští i odborní lékaři.</div>
+
+  <!-- J1 -->
+  <div class="question">
+    <div class="question-text">J1. Máte vy nebo vaši blízcí problém sehnat v Třebíči lékaře?</div>
+    <div class="question-hint">Vyberte vše, co platí</div>
+    <div class="options" id="j1-options">
+      <label class="option"><input type="checkbox" name="j1" value="praktik"><span class="option-label">praktický lékař pro dospělé</span></label>
+      <label class="option"><input type="checkbox" name="j1" value="zubař"><span class="option-label">zubař</span></label>
+      <label class="option"><input type="checkbox" name="j1" value="dětský"><span class="option-label">dětský lékař</span></label>
+      <label class="option"><input type="checkbox" name="j1" value="specialista"><span class="option-label">odborný lékař / specialista</span></label>
+      <label class="option"><input type="checkbox" name="j1" value="nemám problém"><span class="option-label">nemám problém — péči mám zajištěnou</span></label>
+      <label class="option"><input type="checkbox" name="j1" value="jiné"><span class="option-label">jiné</span></label>
+      <textarea class="other-input" id="j1-other" placeholder="Upřesněte…"></textarea>
+    </div>
+  </div>
+
+  <!-- J2 -->
+  <div class="question">
+    <div class="question-text">J2. Co by podle vás mělo město dělat pro zlepšení dostupnosti lékařské péče?</div>
+    <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
+    <div class="options" id="j2-options" data-max="3">
+      <label class="option"><input type="checkbox" name="j2" value="bydlení pro lékaře"><span class="option-label">nabízet lékařům dostupné bydlení nebo ordinace (např. obecní prostory)</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="pobídky a stipendia"><span class="option-label">finanční pobídky a stipendia pro nové lékaře</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="nemocnice"><span class="option-label">podpora a rozvoj nemocnice</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="pohotovost"><span class="option-label">zajištění lékařské i zubní pohotovosti</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="koordinace s krajem"><span class="option-label">lepší koordinace s krajem a zdravotními pojišťovnami</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="nevím"><span class="option-label">nevím</span></label>
+      <label class="option"><input type="checkbox" name="j2" value="jiné"><span class="option-label">jiné</span></label>
+      <textarea class="other-input" id="j2-other" placeholder="Upřesněte…"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
      BLOK H — SPORT A VOLNÝ ČAS
 ══════════════════════════════════════════════════════════ -->
 <div class="page" id="page-h">
@@ -1097,16 +1200,16 @@
 
   <!-- H1a + H1b -->
   <div class="question">
-    <div class="question-text">H1a. Jak hodnotíte v Brně podmínky pro amatérský sport a běžný pohyb (běh, kolo, plavání, hřiště, sportovní areály pro veřejnost, tělocvičny)?</div>
+    <div class="question-text">H1a. Jak hodnotíte v Třebíči podmínky pro amatérský sport a běžný pohyb (běh, kolo, plavání, hřiště, sportovní areály pro veřejnost, tělocvičny)?</div>
     <div class="options" id="h1a-options">
-      <label class="option"><input type="radio" name="h1a" value="spokojen/a"><span class="option-label">jsem spokojen/a</span></label>
-      <label class="option"><input type="radio" name="h1a" value="spíše spokojen/a"><span class="option-label">jsem spíše spokojen/a</span></label>
-      <label class="option"><input type="radio" name="h1a" value="spíše nespokojen/a"><span class="option-label">jsem spíše nespokojen/a</span></label>
-      <label class="option"><input type="radio" name="h1a" value="nespokojen/a"><span class="option-label">jsem nespokojen/a</span></label>
+      <label class="option"><input type="radio" name="h1a" value="spokojen/a"><span class="option-label">spokojen/a</span></label>
+      <label class="option"><input type="radio" name="h1a" value="spíše spokojen/a"><span class="option-label">spíše spokojen/a</span></label>
+      <label class="option"><input type="radio" name="h1a" value="spíše nespokojen/a"><span class="option-label">spíše nespokojen/a</span></label>
+      <label class="option"><input type="radio" name="h1a" value="nespokojen/a"><span class="option-label">nespokojen/a</span></label>
       <label class="option"><input type="radio" name="h1a" value="nezajímá"><span class="option-label">toto téma mě nezajímá</span></label>
     </div>
     <div class="inline-followup hidden" id="h1b-question">
-      <div class="followup-label">H1b. Jaká sportoviště nebo místa pro volný čas a v jaké části Brna byste uvítali? (volitelné)</div>
+      <div class="followup-label">H1b. Jaká sportoviště nebo místa pro volný čas a v jaké části Třebíče byste uvítali? (volitelné)</div>
       <textarea id="h1b" placeholder="Napište prosím…"></textarea>
     </div>
   </div>
@@ -1118,7 +1221,7 @@
       <label class="option"><input type="radio" name="h3" value="běžná sportoviště"><span class="option-label">běžná sportoviště pro veřejnost</span></label>
       <label class="option"><input type="radio" name="h3" value="mládež a amatéři"><span class="option-label">podporu mládežnického a amatérského sportu (kluby, oddíly, kroužky)</span></label>
       <label class="option"><input type="radio" name="h3" value="profi kluby"><span class="option-label">podporu profesionálních sportovních klubů</span></label>
-      <label class="option"><input type="radio" name="h3" value="velké projekty"><span class="option-label">velké projekty (multifunkční hala, fotbalový stadion)</span></label>
+      <label class="option"><input type="radio" name="h3" value="velké projekty"><span class="option-label">velké projekty (sportovní haly a stadiony)</span></label>
       <label class="option"><input type="radio" name="h3" value="vrcholné akce"><span class="option-label">reprezentativní vrcholné akce</span></label>
       <label class="option"><input type="radio" name="h3" value="nevyhraněný"><span class="option-label">nemám vyhraněný názor</span></label>
     </div>
@@ -1133,7 +1236,7 @@
 
   <!-- I1 + I2 -->
   <div class="question">
-    <div class="question-text">I1. Cítíte se v Brně bezpečně?</div>
+    <div class="question-text">I1. Cítíte se v Třebíči bezpečně?</div>
     <div class="options" id="i1-options">
       <label class="option"><input type="radio" name="i1" value="naprosto bezpečně"><span class="option-label">naprosto bezpečně</span></label>
       <label class="option"><input type="radio" name="i1" value="spíše bezpečně"><span class="option-label">spíše bezpečně</span></label>
@@ -1148,19 +1251,19 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     BLOK L — BRNO OSOBNĚ
+     BLOK L — TŘEBÍČ OSOBNĚ
 ══════════════════════════════════════════════════════════ -->
 <div class="page" id="page-l">
-  <div class="block-title">Brno osobně</div>
+  <div class="block-title">Třebíč osobně</div>
 
   <div class="question">
-    <div class="question-text">L1. Co si v Brně ze všeho nejvíce přejete?</div>
+    <div class="question-text">L1. Co si v Třebíči ze všeho nejvíce přejete?</div>
     <div class="question-hint">Volitelná otázka</div>
     <textarea id="l1" placeholder="Napište prosím…"></textarea>
   </div>
 
   <div class="question">
-    <div class="question-text">L2. Co se v Brně v žádném případě nesmí stát?</div>
+    <div class="question-text">L2. Co se v Třebíči v žádném případě nesmí stát?</div>
     <div class="question-hint">Volitelná otázka</div>
     <textarea id="l2" placeholder="Napište prosím…"></textarea>
   </div>
@@ -1169,43 +1272,6 @@
     <div class="question-text">L3. Máte nějaký vzkaz nebo téma, které se v dotazníku neobjevilo?</div>
     <div class="question-hint">Volitelná otázka</div>
     <textarea id="l3" placeholder="Napište prosím…"></textarea>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     BLOK K — CELOSPOLEČENSKÝ POHLED
-══════════════════════════════════════════════════════════ -->
-<div class="page" id="page-k">
-  <div class="block-title">Celospolečenský pohled</div>
-
-  <!-- K2 — první (zbavuje K1) -->
-  <div class="question">
-    <div class="question-text">K2. Jak velký vliv má celostátní politická situace na to, koho zvolíte do brněnského zastupitelstva?</div>
-    <div class="options" id="k2-options">
-      <label class="option"><input type="radio" name="k2" value="velký"><span class="option-label">velký — komunální volby vnímám v kontextu celostátního dění</span></label>
-      <label class="option"><input type="radio" name="k2" value="částečný"><span class="option-label">částečný — záleží mi na obou rovinách</span></label>
-      <label class="option"><input type="radio" name="k2" value="žádný"><span class="option-label">žádný — komunální a celostátní politiku striktně odděluji</span></label>
-      <label class="option"><input type="radio" name="k2" value="nevím"><span class="option-label">nevím</span></label>
-    </div>
-  </div>
-
-  <!-- K1 — conditional: K2 ≠ žádný -->
-  <div class="question conditional hidden" id="k1-question">
-    <div class="question-text">K1. Které z následujících jevů vás osobně znepokojují?</div>
-    <div class="question-hint">Vyberte nejvýše 3 možnosti</div>
-    <div class="options" id="k1-options" data-max="3">
-      <label class="option"><input type="checkbox" name="k1" value="oslabování demokracie"><span class="option-label">oslabování demokracie a právního státu v ČR</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="geopolitická nestabilita"><span class="option-label">geopolitická nestabilita a nárůst autoritářství</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="korupce"><span class="option-label">korupce a klientelismus ve veřejné správě</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="zdražování"><span class="option-label">zdražování, inflace a růst nákladů na bydlení</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="války"><span class="option-label">války a násilí ve světě</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="klimatická změna"><span class="option-label">klimatická změna a extrémní výkyvy počasí</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="extremismus"><span class="option-label">extremismus a polarizace české společnosti</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="migrace"><span class="option-label">migrace</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="žádné"><span class="option-label">žádné z výše uvedených výrazněji</span></label>
-      <label class="option"><input type="checkbox" name="k1" value="jiné"><span class="option-label">jiné</span></label>
-      <textarea class="other-input" id="k1-other" placeholder="Upřesněte…"></textarea>
-    </div>
   </div>
 </div>
 
@@ -1268,50 +1334,29 @@
 
   <!-- N5 -->
   <div class="question">
-    <div class="question-text">N5. Část Brna, kde bydlím</div>
+    <div class="question-text">N5. Část Třebíče, kde bydlím</div>
     <select id="n5">
-      <option value="">— Vyberte část Brna —</option>
-      <optgroup label="Brno-střed">
-        <option>Staré Brno</option>
-        <option>Veveří</option>
-        <option>Trnitá</option>
-        <option>Štýřice</option>
-        <option>Zábrdovice</option>
-        <option>Město (centrum)</option>
-      </optgroup>
-      <optgroup label="Ostatní části Brna">
-        <option>Brno-Jih</option>
-        <option>Brno-Sever</option>
-        <option>Bystrc</option>
-        <option>Bohunice</option>
-        <option>Bosonohy</option>
-        <option>Brněnské Ivanovice</option>
-        <option>Černovice</option>
-        <option>Chrlice</option>
-        <option>Jehnice</option>
-        <option>Jundrov</option>
-        <option>Kníničky</option>
-        <option>Kohoutovice</option>
-        <option>Komín</option>
-        <option>Královo Pole</option>
-        <option>Lesná</option>
-        <option>Líšeň</option>
-        <option>Maloměřice a Obřany</option>
-        <option>Medlánky</option>
-        <option>Nový Lískovec</option>
-        <option>Ořešín</option>
-        <option>Přízřenice</option>
-        <option>Řečkovice a Mokrá Hora</option>
-        <option>Slatina</option>
-        <option>Soběšice</option>
-        <option>Starý Lískovec</option>
-        <option>Tuřany</option>
-        <option>Útěchov</option>
-        <option>Vinohrady</option>
-        <option>Žabovřesky</option>
-        <option>Žebětín</option>
-        <option>Židenice</option>
-      </optgroup>
+      <option value="">— Vyberte část Třebíče —</option>
+      <option>Vnitřní Město</option>
+      <option>Stařečka</option>
+      <option>Jejkov</option>
+      <option>Podklášteří</option>
+      <option>Zámostí</option>
+      <option>Nové Dvory</option>
+      <option>Horka-Domky</option>
+      <option>Borovina</option>
+      <option>Týn</option>
+      <option>Nové Město</option>
+      <option>Kočičina</option>
+      <option>Hájek</option>
+      <option>Budíkovice</option>
+      <option>Pocoucov</option>
+      <option>Ptáčov</option>
+      <option>Račerovice</option>
+      <option>Řípov</option>
+      <option>Slavice</option>
+      <option>Sokolí</option>
+      <option>bydlím mimo Třebíč</option>
     </select>
   </div>
 
@@ -1341,7 +1386,7 @@
 ══════════════════════════════════════════════════════════ -->
 <div class="page" id="page-end">
   <div class="end-card">
-    <h2 style="font-size: 22px; max-width: 540px; margin: 0 auto 18px;">Chcete vědět, jak Brňané a Brňanky odpověděli a jaký program z dotazníku vznikne?</h2>
+    <h2 style="font-size: 22px; max-width: 540px; margin: 0 auto 18px;">Chcete vědět, jak Třebíčané a Třebíčanky odpověděli a jaký program z dotazníku vznikne?</h2>
 
     <div class="signup-card">
       <input type="email" class="email-input" id="email-field" placeholder="vas@email.cz" autocomplete="email">
@@ -1444,9 +1489,9 @@ function saveProgress(status = 'partial') {
 
 // ─── Page order ───────────────────────────────────────────────────
 const PAGES = [
-  'page-intro', 'page-a', 'page-c',
-  'page-e', 'page-f', 'page-g', 'page-h',
-  'page-i', 'page-k', 'page-l', 'page-n', 'page-end'
+  'page-intro', 'page-a', 'page-b', 'page-c', 'page-d',
+  'page-e', 'page-f', 'page-g', 'page-j', 'page-h',
+  'page-i', 'page-l', 'page-n', 'page-end'
 ];
 const CONTENT_PAGES = PAGES.slice(1, -1); // exclude intro + end
 let currentIdx = 0;
@@ -1456,15 +1501,18 @@ let currentIdx = 0;
 // visibleCheck: id of element — skip validation if that element has .hidden
 const REQUIRED = {
   'page-a': [],
+  'page-b': [],
   'page-c': [],
+  'page-d': [],
   'page-e': [],
   'page-f': [],
   'page-g': [
     { type: 'checkbox', name: 'g0' }, // větví celý blok G
   ],
+  'page-j': [],
   'page-h': [],
   'page-i': [],
-  'page-k': [],
+  'page-l': [],
 };
 
 function isVisible(elId) {
@@ -1769,21 +1817,22 @@ function doSubmit() {
   const _surveyBase = location.origin + location.pathname;
   const _utm = (src) => _surveyBase + '?utm_source=' + src + '&utm_medium=share&utm_campaign=dotaznik';
   const _surveyUrl  = _utm('copy'); // odkaz pro „Zkopírovat" + WhatsApp text
-  const _shareMsg   = 'Zelení Brno zjišťují, jaké Brno chcete. Vyplňte dotazník: ' + _utm('whatsapp');
+  const _shareMsg   = 'V jaké Třebíči chcete žít? Vyplňte dotazník: ' + _utm('whatsapp');
   const _fbUrl      = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(_utm('facebook'));
   const _msgUrl     = 'fb-messenger://share?link=' + encodeURIComponent(_utm('messenger'));
   const _waUrl      = 'https://wa.me/?text=' + encodeURIComponent(_shareMsg);
+  // TODO: nahraďte odkazy na produkční Facebook/Instagram/Action Network pro Třebíč.
   const _fbZeleni   = 'https://www.facebook.com/zelenebrno';
   const _igZeleni   = 'https://www.instagram.com/zelenebrno/';
   const _kampanUrl  = 'http://actionnetwork.org/forms/kampan-brno/?utm_source=dotaznik';
 
   document.querySelector('.end-card').innerHTML = `
     <h2>Děkujeme. Vážíme si toho.</h2>
-    <p style="font-size:15px; color: var(--text-secondary); line-height:1.7;">Vaše odpovědi se promítnou přímo do programu, se kterým půjdeme do říjnových voleb.</p>
+    <p style="font-size:15px; color: var(--text-secondary); line-height:1.7;">Vaše odpovědi se promítnou přímo do programu, se kterým půjdeme do komunálních voleb.</p>
 
     <div class="end-section">
       <h3>Pošlete dotazník dál</h3>
-      <p>Čím víc Brňanů a Brňanek odpoví, tím přesnější obraz budeme mít. A tím lepší program z toho vznikne.</p>
+      <p>Čím víc Třebíčanů a Třebíčanek odpoví, tím přesnější obraz budeme mít. A tím lepší program z toho vznikne.</p>
       <div class="share-buttons" style="justify-content:flex-start">
         <a class="share-btn share-btn-fb" href="${_fbUrl}" target="_blank" rel="noopener">Facebook</a>
         <a class="share-btn share-btn-msg" href="${_msgUrl}" target="_blank" rel="noopener">Messenger</a>
@@ -1795,8 +1844,8 @@ function doSubmit() {
     <div class="end-section">
       <h3>Sledujte nás</h3>
       <div class="follow-row">
-        <a class="follow-btn share-btn-fb" href="${_fbZeleni}" target="_blank" rel="noopener">Facebook Zelení Brno</a>
-        <a class="follow-btn share-btn-ig" href="${_igZeleni}" target="_blank" rel="noopener">Instagram Zelení Brno</a>
+        <a class="follow-btn share-btn-fb" href="${_fbZeleni}" target="_blank" rel="noopener">Facebook Zelení Třebíč</a>
+        <a class="follow-btn share-btn-ig" href="${_igZeleni}" target="_blank" rel="noopener">Instagram Zelení Třebíč</a>
       </div>
     </div>
 
@@ -1998,11 +2047,6 @@ on('input[name="i1"]', 'change', () => {
   toggle('i2-question', v === 'spíše nebezpečně' || v === 'velmi nebezpečně');
 });
 
-// K2 → K1
-on('input[name="k2"]', 'change', () => {
-  toggle('k1-question', val('k2') !== 'žádný' && val('k2') !== null);
-});
-
 // ─── Init ─────────────────────────────────────────────────────────
 // ─── Question metadata: reasoning + required flag ─────────────────
 // Key = prefix that uniquely identifies the question-text
@@ -2038,20 +2082,6 @@ const INTRO_VARIANTS = {
   IG:      { html: '' },
   FB:      { html: '' },
   mailing: { html: '' },
-  mailing_saliny: { html: `
-    <h1>Velký dotazník o Brně</h1>
-    <p class="lead">Děkujeme, že jste podepsali petici za zachování tramvajových spojů v centru.</p>
-    <p>Doprava ale není jediné, co Brno řeší.</p>
-    <p class="lead">Co vás v Brně štve a co naopak za žádnou cenu nesmí zmizet?</p>
-    <p>Připravujeme volební program Zelených pro komunální volby v říjnu 2026. Hlavní sběr odpovědí jsme uzavřeli 25. května, ale dotazník necháváme dál otevřený — vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro další práci v Brně. Pokud nám necháte e-mail, pošleme vám hotový program, jakmile bude na světě.</p>
-    <ul class="intro-list">
-      <li>Vyplnění zabere asi 6 minut a je anonymní.</li>
-    </ul>
-
-    <button class="btn-start" onclick="goNext()">Začít vyplňovat →</button>
-
-    <p class="note" style="margin-top: 20px;">Sdílejte dotazník s lidmi ve svém okolí — čím víc odpovědí, tím přesnější obraz Brna budeme mít.</p>
-  ` },
 };
 
 function applyIntroVariant() {
@@ -2093,10 +2123,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Other-input reveals
   const others = [
     ['a2','a2-other'],
+    ['b2','b2-other'],
+    ['d2','d2-other'],
     ['e1','e1-other'], ['e2','e2-other'],
     ['f3','f3-other'],
     ['g2','g2-other'], ['g3','g3-other'],
-    ['k1','k1-other'],
+    ['j1','j1-other'], ['j2','j2-other'],
   ];
   others.forEach(([name, id]) => setupOtherReveal(name, id));
 

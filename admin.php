@@ -48,7 +48,7 @@ if (empty($_SESSION['admin'])) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin — Jaké Brno chcete?</title>
+<title>Admin — V jaké Třebíči chcete žít?</title>
 <style>
   body { font-family: system-ui, sans-serif; background: #f0f0ec; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
   .box { background: #fff; border-radius: 12px; padding: 40px; width: 320px; box-shadow: 0 2px 16px rgba(0,0,0,.08); }
@@ -82,76 +82,87 @@ try {
 
 // ── Slovník otázek (jednorázový extrakt z index.html) ────────────
 $BLOCKS = [
-  'a' => 'A — Brno za 10 let',
-  'c' => 'C — Velké projekty',
+  'a' => 'A — Třebíč za 10 let',
+  'b' => 'B — Historické centrum a památky',
+  'c' => 'C — Priority a velké projekty',
+  'd' => 'D — Dukovany a rozvoj regionu',
   'e' => 'E — Doprava a veřejný prostor',
   'f' => 'F — Bydlení',
   'g' => 'G — Rodiny a děti',
+  'j' => 'J — Zdravotní péče',
   'h' => 'H — Sport a volný čas',
   'i' => 'I — Bezpečnost',
-  'l' => 'L — Brno osobně',
-  'k' => 'K — Celospolečenský pohled',
+  'l' => 'L — Třebíč osobně',
   'n' => 'N — O vás',
 ];
 
 // 'n' = krátké označení v UI; 'block' = klíč do $BLOCKS; 'text' = znění; 'long' = full-width volný text
 $QUESTIONS = [
-  'a2'        => ['n'=>'A2',  'block'=>'a', 'text'=>'Vyberte až 3 pojmy, které by měly vystihovat Brno ZA 10 LET.'],
+  'a2'        => ['n'=>'A2',  'block'=>'a', 'text'=>'Vyberte až 3 pojmy, které by měly vystihovat Třebíč ZA 10 LET.'],
   'a2-other'  => ['n'=>'A2 — jiné',  'block'=>'a', 'text'=>'A2 — upřesnění "jiné"', 'long'=>true],
-  'a3'        => ['n'=>'A3',  'block'=>'a', 'text'=>'Co jsou silné stránky Brna — věci, které tu fungují dobře?', 'long'=>true],
-  'a4'        => ['n'=>'A4',  'block'=>'a', 'text'=>'Co považujete za největší problémy Brna a co byste současnému vedení nejvíce vytknul/a?', 'long'=>true],
+  'a3'        => ['n'=>'A3',  'block'=>'a', 'text'=>'Co jsou silné stránky Třebíče — věci, které tu fungují dobře?', 'long'=>true],
+  'a4'        => ['n'=>'A4',  'block'=>'a', 'text'=>'Co považujete za největší problémy Třebíče a co byste současnému vedení nejvíce vytknul/a?', 'long'=>true],
 
-  'c1'        => ['n'=>'C1',  'block'=>'c', 'text'=>'Které tři záměry jsou pro vás jako obyvatele Brna nejdůležitější?'],
+  'b1'        => ['n'=>'B1',  'block'=>'b', 'text'=>'Jak vnímáte současný stav historického centra Třebíče a UNESCO památek?'],
+  'b2'        => ['n'=>'B2',  'block'=>'b', 'text'=>'Co by mělo město v oblasti historického centra a památek dělat? (max 3)'],
+  'b2-other'  => ['n'=>'B2 — jiné',  'block'=>'b', 'text'=>'B2 — upřesnění "jiné"', 'long'=>true],
+
+  'c1'        => ['n'=>'C1',  'block'=>'c', 'text'=>'Které tři záměry jsou pro vás jako obyvatele Třebíče nejdůležitější?'],
   'c1-other'  => ['n'=>'C1 — jiné',  'block'=>'c', 'text'=>'C1 — upřesnění "jiné"', 'long'=>true],
   'c1b'       => ['n'=>'C1b', 'block'=>'c', 'text'=>'Chybí v seznamu něco, co považujete za opravdu důležité?', 'long'=>true],
-  'c2'        => ['n'=>'C2',  'block'=>'c', 'text'=>'Kde má Brno největší nevyužitý potenciál?', 'long'=>true],
+  'c2'        => ['n'=>'C2',  'block'=>'c', 'text'=>'Kde má Třebíč největší nevyužitý potenciál?', 'long'=>true],
 
-  'e1'        => ['n'=>'E1',  'block'=>'e', 'text'=>'Jakými způsoby se pravidelně pohybujete po Brně?'],
+  'd1'        => ['n'=>'D1',  'block'=>'d', 'text'=>'Jak vnímáte plánované rozšíření jaderné elektrárny Dukovany (5. blok)?'],
+  'd2'        => ['n'=>'D2',  'block'=>'d', 'text'=>'Co by Třebíč v souvislosti s Dukovany měla od státu a ČEZu nejvíc vyžadovat? (max 3)'],
+  'd2-other'  => ['n'=>'D2 — jiné',  'block'=>'d', 'text'=>'D2 — upřesnění "jiné"', 'long'=>true],
+  'd3'        => ['n'=>'D3',  'block'=>'d', 'text'=>'Co považujete za největší riziko nebo příležitost rozšíření Dukovan pro Třebíč?', 'long'=>true],
+
+  'e1'        => ['n'=>'E1',  'block'=>'e', 'text'=>'Jakými způsoby se pravidelně pohybujete po Třebíči?'],
   'e1-other'  => ['n'=>'E1 — jak jinak',  'block'=>'e', 'text'=>'E1 — jak jinak', 'long'=>true],
   'e2'        => ['n'=>'E2',  'block'=>'e', 'text'=>'Co by vás motivovalo jezdit autem méně nebo ho omezit?'],
   'e2-other'  => ['n'=>'E2 — jiné',  'block'=>'e', 'text'=>'E2 — upřesnění "jiné"', 'long'=>true],
-  'e3a'       => ['n'=>'E3a', 'block'=>'e', 'text'=>'Setkáváte se při pohybu pěšky v Brně s problémy?'],
+  'e3a'       => ['n'=>'E3a', 'block'=>'e', 'text'=>'Setkáváte se při pohybu pěšky v Třebíči s problémy?'],
   'e3b'       => ['n'=>'E3b', 'block'=>'e', 'text'=>'S jakými problémy se nejčastěji setkáváte, případně kde? (chodci)', 'long'=>true],
   'e4a'       => ['n'=>'E4a', 'block'=>'e', 'text'=>'Setkáváte se při jízdě na kole nebo koloběžce s problémy?'],
   'e4b'       => ['n'=>'E4b', 'block'=>'e', 'text'=>'S jakými problémy se nejčastěji setkáváte, případně kde? (kolo/koloběžka)', 'long'=>true],
-  'e8a'       => ['n'=>'E8a', 'block'=>'e', 'text'=>'Některá evropská města rozšiřují chodníky, přidávají zeleň, lavičky a místa k posezení namísto části parkovacích míst. Jak byste přijal/a takovou přeměnu a rozšíření pěších zón v centru Brna?'],
-  'e9'        => ['n'=>'E9',  'block'=>'e', 'text'=>'Dokázali byste si představit, že by pěší zónou byla například dolní část ulice Veveří?'],
-  'e10'       => ['n'=>'E10', 'block'=>'e', 'text'=>'Mělo by město aktivně regulovat vizuální smog v Brně — billboardy, neuspořádané reklamy, plachty a výlohy, které narušují vzhled ulic?'],
+  'e8a'       => ['n'=>'E8a', 'block'=>'e', 'text'=>'Některá evropská města rozšiřují chodníky, přidávají zeleň, lavičky a místa k posezení namísto části parkovacích míst. Jak byste přijal/a takovou přeměnu v centru Třebíče?'],
+  'e10'       => ['n'=>'E10', 'block'=>'e', 'text'=>'Jak důležité je pro vás dobudování obchvatu Třebíče?'],
 
-  'f1a'       => ['n'=>'F1a', 'block'=>'f', 'text'=>'Jak vážný problém je podle vás dostupnost bydlení v Brně?'],
-  'f1b'       => ['n'=>'F1b', 'block'=>'f', 'text'=>'Řešíte vy nebo někdo z vašich blízkých problém s bydlením v Brně — ať už to je shánění bytu, nebo problém ho zaplatit?'],
+  'f1a'       => ['n'=>'F1a', 'block'=>'f', 'text'=>'Jak vážný problém je podle vás dostupnost bydlení v Třebíči?'],
+  'f1b'       => ['n'=>'F1b', 'block'=>'f', 'text'=>'Řešíte vy nebo někdo z vašich blízkých problém s bydlením v Třebíči — ať už to je shánění bytu, nebo problém ho zaplatit?'],
   'f3'        => ['n'=>'F3',  'block'=>'f', 'text'=>'Co by město mělo dělat pro zvýšení dostupnosti bydlení?'],
   'f3-other'  => ['n'=>'F3 — jiné',  'block'=>'f', 'text'=>'F3 — upřesnění "jiné"', 'long'=>true],
 
   'g0'        => ['n'=>'G0',  'block'=>'g', 'text'=>'Máte doma dítě či děti do 18 let?'],
-  'g1a'       => ['n'=>'G1a', 'block'=>'g', 'text'=>'Zaznamenali jste problémy s dostupností míst ve školce v Brně?'],
-  'g1b'       => ['n'=>'G1b', 'block'=>'g', 'text'=>'Jak hodnotíte dostupnost a kvalitu základních škol ve vaší části Brna?'],
-  'g1c'       => ['n'=>'G1c', 'block'=>'g', 'text'=>'Narazili jste vy nebo vaši blízcí na problém s kapacitou středních škol v Brně?'],
-  'g2'        => ['n'=>'G2',  'block'=>'g', 'text'=>'Co pro rodiny s dětmi v Brně nejvíce chybí nebo potřebuje zlepšit?'],
+  'g1a'       => ['n'=>'G1a', 'block'=>'g', 'text'=>'Zaznamenali jste problémy s dostupností míst ve školce v Třebíči?'],
+  'g1b'       => ['n'=>'G1b', 'block'=>'g', 'text'=>'Jak hodnotíte dostupnost a kvalitu základních škol ve vaší části Třebíče?'],
+  'g1c'       => ['n'=>'G1c', 'block'=>'g', 'text'=>'Narazili jste vy nebo vaši blízcí na problém s nabídkou nebo kapacitou středních škol v Třebíči?'],
+  'g2'        => ['n'=>'G2',  'block'=>'g', 'text'=>'Co pro rodiny s dětmi v Třebíči nejvíce chybí nebo potřebuje zlepšit?'],
   'g2-other'  => ['n'=>'G2 — jiné',  'block'=>'g', 'text'=>'G2 — upřesnění "jiné"', 'long'=>true],
   'g3'        => ['n'=>'G3',  'block'=>'g', 'text'=>'Jak město může nejlépe pomoci rodinám s péčí o děti během školních prázdnin?'],
   'g3-other'  => ['n'=>'G3 — jiné',  'block'=>'g', 'text'=>'G3 — upřesnění "jiné"', 'long'=>true],
 
-  'h1a'       => ['n'=>'H1a', 'block'=>'h', 'text'=>'Jak hodnotíte v Brně podmínky pro amatérský sport a běžný pohyb (běh, kolo, plavání, hřiště, sportovní areály pro veřejnost, tělocvičny)?'],
-  'h1b'       => ['n'=>'H1b', 'block'=>'h', 'text'=>'Jaká sportoviště nebo místa pro volný čas a v jaké části Brna byste uvítali?', 'long'=>true],
+  'j1'        => ['n'=>'J1',  'block'=>'j', 'text'=>'Máte vy nebo vaši blízcí problém sehnat v Třebíči lékaře?'],
+  'j1-other'  => ['n'=>'J1 — jiné',  'block'=>'j', 'text'=>'J1 — upřesnění "jiné"', 'long'=>true],
+  'j2'        => ['n'=>'J2',  'block'=>'j', 'text'=>'Co by podle vás mělo město dělat pro zlepšení dostupnosti lékařské péče? (max 3)'],
+  'j2-other'  => ['n'=>'J2 — jiné',  'block'=>'j', 'text'=>'J2 — upřesnění "jiné"', 'long'=>true],
+
+  'h1a'       => ['n'=>'H1a', 'block'=>'h', 'text'=>'Jak hodnotíte v Třebíči podmínky pro amatérský sport a běžný pohyb (běh, kolo, plavání, hřiště, sportovní areály pro veřejnost, tělocvičny)?'],
+  'h1b'       => ['n'=>'H1b', 'block'=>'h', 'text'=>'Jaká sportoviště nebo místa pro volný čas a v jaké části Třebíče byste uvítali?', 'long'=>true],
   'h3'        => ['n'=>'H3',  'block'=>'h', 'text'=>'Peníze, které dává město na sport, by měly přednostně směřovat na:'],
 
-  'i1'        => ['n'=>'I1',  'block'=>'i', 'text'=>'Cítíte se v Brně bezpečně?'],
+  'i1'        => ['n'=>'I1',  'block'=>'i', 'text'=>'Cítíte se v Třebíči bezpečně?'],
   'i2'        => ['n'=>'I2',  'block'=>'i', 'text'=>'Co je hlavním zdrojem pocitu nebezpečí nebo nepohody? Máte na mysli konkrétní místo?', 'long'=>true],
 
-  'l1'        => ['n'=>'L1',  'block'=>'l', 'text'=>'Co si v Brně ze všeho nejvíce přejete?', 'long'=>true],
-  'l2'        => ['n'=>'L2',  'block'=>'l', 'text'=>'Co se v Brně v žádném případě nesmí stát?', 'long'=>true],
+  'l1'        => ['n'=>'L1',  'block'=>'l', 'text'=>'Co si v Třebíči ze všeho nejvíce přejete?', 'long'=>true],
+  'l2'        => ['n'=>'L2',  'block'=>'l', 'text'=>'Co se v Třebíči v žádném případě nesmí stát?', 'long'=>true],
   'l3'        => ['n'=>'L3',  'block'=>'l', 'text'=>'Máte nějaký vzkaz nebo téma, které se v dotazníku neobjevilo?', 'long'=>true],
-
-  'k2'        => ['n'=>'K2',  'block'=>'k', 'text'=>'Jak velký vliv má celostátní politická situace na to, koho zvolíte do brněnského zastupitelstva?'],
-  'k1'        => ['n'=>'K1',  'block'=>'k', 'text'=>'Které z následujících jevů vás osobně znepokojují? (max 3)'],
-  'k1-other'  => ['n'=>'K1 — jiné',  'block'=>'k', 'text'=>'K1 — upřesnění "jiné"', 'long'=>true],
 
   'n1'        => ['n'=>'N1',  'block'=>'n', 'text'=>'Pohlaví'],
   'n2'        => ['n'=>'N2',  'block'=>'n', 'text'=>'Věková skupina'],
   'n3'        => ['n'=>'N3',  'block'=>'n', 'text'=>'Jak byste popsal/a svoji aktuální ekonomickou situaci?'],
   'n4'        => ['n'=>'N4',  'block'=>'n', 'text'=>'Bydlím v'],
-  'n5'        => ['n'=>'N5',  'block'=>'n', 'text'=>'Část Brna, kde bydlím'],
+  'n5'        => ['n'=>'N5',  'block'=>'n', 'text'=>'Část Třebíče, kde bydlím'],
   'n6'        => ['n'=>'N6',  'block'=>'n', 'text'=>'Koho jste volili v posledních sněmovních volbách (2025)?'],
 ];
 
@@ -358,7 +369,7 @@ function urlWith($overrides = []) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin — Jaké Brno chcete?</title>
+<title>Admin — V jaké Třebíči chcete žít?</title>
 <style>
   * { box-sizing: border-box; }
   body { font-family: system-ui, sans-serif; background: #f0f0ec; margin: 0; color: #222; }
@@ -468,7 +479,7 @@ function urlWith($overrides = []) {
 <body>
 
 <div class="topbar">
-  <h1>Jaké Brno chcete? — Admin</h1>
+  <h1>V jaké Třebíči chcete žít? — Admin</h1>
   <div class="tabs">
     <a href="<?= htmlspecialchars(urlWith(['view'=>null, 'qid'=>null, 'id'=>null])) ?>" class="<?= $view==='list'?'active':'' ?>">Respondenti</a>
     <a href="<?= htmlspecialchars(urlWith(['view'=>'byq', 'p'=>null, 'id'=>null])) ?>" class="<?= $view==='byq'?'active':'' ?>">Po otázkách</a>

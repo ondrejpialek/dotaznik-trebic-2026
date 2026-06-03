@@ -1,8 +1,8 @@
-# Jaké Brno chcete? — dotazník Zelených Brno 2026
+# V jaké Třebíči chcete žít? — dotazník Zelených Třebíč 2026
 
-Online dotazník pro sběr podnětů od obyvatel Brna. Z odpovědí vznikne volební program Zelených pro komunální volby v říjnu 2026.
+Online dotazník pro sběr podnětů od obyvatel Třebíče. Z odpovědí vznikne volebí program Zelených pro komunální volby v říjnu 2026.
 
-Produkční nasazení: **https://jakebrno.cz**
+Produkční nasazení: **https://www.jakoutrebic.cz**
 
 ## Soubory
 
@@ -13,7 +13,7 @@ Produkční nasazení: **https://jakebrno.cz**
 | `admin.php` | Administrace — výpis odpovědí, detail, agregace, sources |
 | `stats.php` | Veřejné JSON statistiky (počty) |
 | `og_image.png` | Open Graph náhled pro sociální sítě |
-| `zeleni-brno-dotaznik-v5.md` | Aktuální podoba dotazníku v Markdownu (refer. dokument) |
+| `dotaznik-trebic-v2.md` | Aktuální podoba dotazníku v Markdownu (refer. dokument) |
 | `prompt-social.md` | Texty pro sdílení |
 
 ## Datový model
@@ -68,7 +68,7 @@ Pak otevřít http://127.0.0.1:8000/. Pro test admin/save je třeba mít zapisov
 
 - Statický `index.html` + PHP endpointy (`save.php`, `admin.php`, `stats.php`) běží přímo na sdíleném hostingu.
 - Databázový soubor `dotaznik.db` patří **mimo webový kořen** (`../dotaznik.db`) — viz cesty v `save.php` a `admin.php`.
-- `save.php` má CORS hlavičku omezenou na `https://jakebrno.cz`.
+- `save.php` má CORS hlavičku omezenou na `https://www.jakoutrebic.cz`.
 
 ### Admin heslo
 
