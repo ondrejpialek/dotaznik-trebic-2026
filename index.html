@@ -29,14 +29,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #557A53;
-      --primary-light: #7AA874;
-      --primary-pale: #EBF2EA;
+      --primary: #1EE98D;
+      --primary-light: #52ECB0;
+      --primary-pale: #E6FDF5;
+      --accent: #0BA2FF;
       --bg: #F5F4F0;
       --surface: #FFFFFF;
-      --text: #2A3328;
-      --text-secondary: #6B7E6A;
-      --border: #D8E3D7;
+      --text: #000000;
+      --text-secondary: #5C5C5C;
+      --border: #D8E5E1;
       --radius: 14px;
       --radius-sm: 9px;
     }
@@ -80,7 +81,7 @@
     .progress-bar { height: 4px; background: var(--border); }
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      background: linear-gradient(90deg, var(--primary), var(--accent));
       width: 0%;
       transition: width 0.45s ease;
       border-radius: 0 2px 2px 0;
@@ -273,7 +274,7 @@
 
     /* ── TRANSITION NOTE ── */
     .transition-note {
-      background: linear-gradient(135deg, var(--primary-pale), #F0F7EF);
+      background: linear-gradient(135deg, var(--primary-pale), #EAF9F4);
       border-radius: var(--radius);
       padding: 14px 18px;
       margin-bottom: 14px;
@@ -285,7 +286,7 @@
 
     /* ── GATEWAY CARD ── */
     .gateway-card {
-      background: linear-gradient(135deg, var(--primary-pale), #F0F7EF);
+      background: linear-gradient(135deg, var(--primary-pale), #EAF9F4);
       border-radius: var(--radius);
       padding: 22px 20px;
       margin-bottom: 14px;
@@ -328,13 +329,13 @@
     }
     .info-btn:hover, .info-btn.active {
       background: var(--primary);
-      color: #fff;
+      color: #000;
     }
     .tooltip-panel {
       position: fixed;
       z-index: 600;
-      background: #1b2b1a;
-      color: #deeedd;
+      background: #0A1A12;
+      color: #E8FDF5;
       border-radius: 10px;
       padding: 13px 15px;
       max-width: min(300px, calc(100vw - 32px));
@@ -352,12 +353,12 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.9px;
-      color: #7AA874;
+      color: #1EE98D;
       gap: 12px;
     }
     .tooltip-close {
       background: none; border: none;
-      color: #deeedd; cursor: pointer;
+      color: #E8FDF5; cursor: pointer;
       font-size: 18px; line-height: 1;
       padding: 0; opacity: 0.6; flex-shrink: 0;
     }
@@ -495,7 +496,7 @@
     .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
     .btn-next {
       background: var(--primary);
-      color: #fff;
+      color: #000;
     }
     /* :hover stavy jen na zařízeních s ukazatelem (myš, trackpad) — iOS Safari
        jinak na první tap zafixuje hover stav a vyžaduje druhý tap pro click. */
@@ -557,7 +558,7 @@
     .intro-list li { margin-bottom: 4px; }
 
     .block-note {
-      background: #f5f3ee;
+      background: #EDF9F4;
       border-left: 3px solid var(--primary);
       padding: 12px 16px;
       margin-bottom: 18px;
@@ -582,7 +583,7 @@
     .intro-meta-item:last-child { border-right: none; }
     .btn-start {
       display: block; width: 100%;
-      padding: 16px; background: var(--primary); color: #fff;
+      padding: 16px; background: var(--primary); color: #000;
       border: none; border-radius: var(--radius-sm);
       font-family: inherit; font-size: 16px; font-weight: 700;
       cursor: pointer; margin-top: 24px;
@@ -604,8 +605,8 @@
 
     /* — E-mail capture (před odesláním) — */
     .signup-card {
-      background: linear-gradient(180deg, #f7f5ee 0%, #f0ede2 100%);
-      border: 1px solid #d8d2bf;
+      background: linear-gradient(180deg, #EDFAF4 0%, #D9F5EB 100%);
+      border: 1px solid #BDE3D7;
       border-radius: 14px;
       padding: 28px 26px;
       margin-top: 20px;
@@ -628,28 +629,28 @@
 
     .signup-card .email-input {
       font-size: 16px; padding: 14px 16px;
-      border-radius: 10px; border: 1.5px solid #cfc9b3;
+      border-radius: 10px; border: 1.5px solid #BDE3D7;
       background: #fff;
     }
-    .signup-card .email-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(85,122,83,.15); }
+    .signup-card .email-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30,233,141,.15); }
 
     .consent-toggle {
       display: flex; align-items: flex-start; gap: 12px;
       padding: 14px 16px; margin-top: 12px;
-      background: #fff; border: 1.5px solid #cfc9b3;
+      background: #fff; border: 1.5px solid #BDE3D7;
       border-radius: 10px; cursor: pointer;
       transition: border-color .15s, background .15s;
     }
-    .consent-toggle:hover { border-color: #b6ad8e; }
+    .consent-toggle:hover { border-color: #8CCFC0; }
     .consent-toggle input { margin: 2px 0 0; flex-shrink: 0; width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
-    .consent-toggle.checked { border-color: var(--primary); background: #f4f7f3; }
+    .consent-toggle.checked { border-color: var(--primary); background: var(--primary-pale); }
     .consent-toggle .consent-text { font-size: 15px; line-height: 1.5; color: var(--text); }
     .consent-toggle .consent-note { font-size: 13px; color: var(--text-secondary); margin-top: 2px; display: block; }
 
     .submit-row { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
     .submit-row .btn-submit {
       width: 100%; padding: 16px;
-      background: var(--primary); color: #fff; border: none;
+      background: var(--primary); color: #000; border: none;
       border-radius: 10px; font-family: inherit; font-size: 16px; font-weight: 700;
       cursor: pointer; transition: background .15s;
     }
@@ -679,9 +680,9 @@
       font-family: inherit; font-size: 15px; font-weight: 600;
       cursor: pointer; transition: background .15s, border-color .15s;
     }
-    .modal-confirm .btn-primary { background: var(--primary); color: #fff; }
+    .modal-confirm .btn-primary { background: var(--primary); color: #000; }
     .modal-confirm .btn-primary:hover { background: var(--primary-light); }
-    .modal-confirm .btn-secondary { background: #fff; color: var(--text); border: 1.5px solid #cfc9b3; }
+    .modal-confirm .btn-secondary { background: #fff; color: var(--text); border: 1.5px solid #BDE3D7; }
     .modal-confirm .btn-secondary:hover { border-color: var(--primary); }
     .modal-confirm .btn-link { background: none; color: var(--text-secondary); padding: 8px; }
     .modal-confirm .btn-link:hover { color: var(--text); }
@@ -707,7 +708,7 @@
     .end-section { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); text-align: left; }
     .end-section h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; color: var(--text-primary); }
     .end-section p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 14px; }
-    .end-cta { display: inline-block; padding: 12px 22px; background: var(--primary); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
+    .end-cta { display: inline-block; padding: 12px 22px; background: var(--primary); color: #000; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
     .end-cta:hover { opacity: 0.9; }
     .follow-row { display: flex; gap: 10px; flex-wrap: wrap; }
     .follow-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 8px; text-decoration: none; font-size: 14px; color: #fff; font-weight: 500; }
