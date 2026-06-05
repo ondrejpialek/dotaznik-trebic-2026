@@ -98,7 +98,10 @@ jsou definovány v JS v `INTRO_VARIANTS`.*
 **Nadpis:** V jaké Třebíči chcete žít?
 **Lead:** Co vás v našem městě štve a co tu naopak máte rádi?
 
-Píšeme volební program pro komunální volby. Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro naši další práci. Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.
+Píšeme volební program pro komunální volby. 
+Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro naši další práci. 
+Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.
+
 
 Vyplnění zabere asi 6 minut a je anonymní.
 
@@ -114,17 +117,11 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 - živou | mladou | kulturní | bohatou | klidnou | bezpečnou | zelenou | čistou | cenově dostupnou | inovativní | solidární | jinou (s upřesněním)
 
-**A3. Co jsou silné stránky Třebíče — věci, které tu fungují dobře?**
-*(volný text, volitelné)*
-
-**A4. Co považujete za největší problémy Třebíče a co byste současnému vedení nejvíce vytknul/a?**
-*(volný text, povinné)*
-
 ---
 
 ## BLOK B — HISTORICKÉ CENTRUM A PAMÁTKY
 
-> *Vysvětlivka v dotazníku: Třebíč je na od roku 2003 seznamu UNESCO díky unikátnímu komplexu památek - židovské čtvrti a hřbitovu a bazilice sv. Prokopa.*
+> *Vysvětlivka v dotazníku: Třebíč je na od roku 2003 seznamu UNESCO díky unikátním památkám - židovské čtvrti a bazilice sv. Prokopa.*
 
 **B1. Jak jste spokojen/a s tím, jak město pečuje o historické centrum a památky?**
 *(radio)*
@@ -145,7 +142,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 ## BLOK C — PRIORITY A VELKÉ PROJEKTY
 
 **C1. Které tři záměry jsou pro vás jako obyvatele Třebíče nejdůležitější?**
-*(checkbox, max 3, volitelné)*
+*(checkbox, max 3)*
 
 - dokončení obchvatu města (silnice I/23) a odvedení tranzitní dopravy
 - dostatek lékařů a zdravotní péče (praktici, zubaři, specialisté)
@@ -161,9 +158,6 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 **C1b. Chybí v seznamu něco, co považujete za opravdu důležité?**
 *(volný text, volitelné)*
-
-**C2. Kde má Třebíč největší nevyužitý potenciál?**
-*(volný text, volitelné — hint: „Co by mohlo fungovat lépe, ale zatím se to nedaří?")*
 
 ---
 
@@ -192,9 +186,6 @@ Vyplnění zabere asi 6 minut a je anonymní.
 - bezpečnost
 - nic zásadního mě netrápí
 - jiné (s upřesněním)
-
-**D3. Jak by podle vás mělo město využít příležitost spojenou s rozvojem Dukovan?**
-*(volný text, volitelné)*
 
 ---
 
@@ -411,56 +402,6 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 **L3. Máte nějaký vzkaz nebo téma, které se v dotazníku neobjevilo?**
 *(volný text, volitelné)*
-
----
-
-## BLOK N — O VÁS
-
-> *Tyto otázky jsou statistické. Dotazník je anonymní — nikde nesbíráme jméno ani kontakt (pokud jej sami nezadáte na závěr).*
-
-**N1. Jsem:**
-*(radio)*
-
-- muž | žena | jiné | nechci odpovědět
-
-**N2. Věková skupina:**
-*(radio)*
-
-- 18–24 | 25–34 | 35–44 | 45–54 | 55–64 | 65+
-
-**N3. Jak byste popsal/a svoji aktuální ekonomickou situaci?**
-*(radio)*
-
-- pohodlná — vychází mi peníze, mohu spořit a mám rezervy
-- přiměřená — vychází mi, ale na spoření nebo rezervy nezbývá
-- napjatá — příjmy pokryjí základní výdaje, ale nic navíc
-- tíživá — mám problém pokrýt i základní výdaje
-- nechci odpovědět
-
-**N4. Bydlím v:**
-*(radio)*
-
-- vlastním bytě | nájemním bytě | družstevním bytě | vlastním domě | nájemním domě | jiné | nechci odpovědět
-
-**N5. Část Třebíče, kde bydlím**
-*(rozbalovací menu — placeholder: „— Vyberte část Třebíče —")*
-
-- Vnitřní Město | Stařečka | Jejkov | Podklášteří | Zámostí | Nové Dvory | Horka-Domky | Borovina | Týn | Nové Město | Kočičina | Hájek | Budíkovice | Pocoucov | Ptáčov | Račerovice | Řípov | Slavice | Sokolí | bydlím mimo Třebíč
-
-**N6. Koho jste volili v posledních sněmovních volbách (2025)?**
-*(radio, volitelné)*
-
-- SPOLU (ODS, TOP09, KDU-ČSL)
-- ANO
-- Piráti + Zelení
-- STAN
-- SPD
-- Motoristé sobě
-- STAČILO
-- jiná strana
-- nevolil/a
-- nepamatuji si
-- nechci odpovědět
 
 ---
 
