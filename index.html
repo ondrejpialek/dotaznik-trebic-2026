@@ -2077,7 +2077,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Other-input reveals
-  setupOtherReveal('a2', 'a2-other', ['jiná']);
   const others = [
     ['b2','b2-other'],
     ['d2','d2-other'],
@@ -2087,6 +2086,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['j1','j1-other'], ['j2','j2-other'],
   ];
   others.forEach(([name, id]) => setupOtherReveal(name, id));
+  setupOtherReveal('a2', 'a2-other', ['jiná']);
 
   showPage();
 });
