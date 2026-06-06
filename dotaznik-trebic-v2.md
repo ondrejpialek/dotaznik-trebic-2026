@@ -405,6 +405,41 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ---
 
+## BLOK N — O VÁS
+
+> *Tyto otázky jsou statistické. Potřebujeme vědět, zda v dotazníku zaznívají různé skupiny obyvatel Třebíče: mladí, rodiče, senioři, ženy i muži. Jen tak poznáme, jestli některé problémy trápí celé město, nebo hlavně konkrétní skupinu lidí. Odpovědi vyhodnocujeme anonymně a v souhrnu. Nikde nesbíráme jméno ani kontakt (pokud jej sami nezadáte na závěr).*
+
+**N1. Jsem:**
+*(radio)*
+
+- muž | žena | jiné | nechci odpovědět
+
+**N2. Věková skupina:**
+*(radio)*
+
+- 18–24 | 25–34 | 35–44 | 45–54 | 55–64 | 65+
+
+**N3. Jak byste popsal/a svoji aktuální ekonomickou situaci?**
+*(radio)*
+
+- pohodlná — vychází mi peníze, mohu spořit a mám rezervy
+- přiměřená — vychází mi, ale na spoření nebo rezervy nezbývá
+- napjatá — příjmy pokryjí základní výdaje, ale nic navíc
+- tíživá — mám problém pokrýt i základní výdaje
+- nechci odpovědět
+
+**N4. Bydlím v:**
+*(radio)*
+
+- vlastním bytě | nájemním bytě | družstevním bytě | vlastním domě | nájemním domě | jiné | nechci odpovědět
+
+**N5. Část Třebíče, kde bydlím**
+*(rozbalovací menu — placeholder: „— Vyberte část Třebíče —")*
+
+- Vnitřní Město | Stařečka | Jejkov | Podklášteří | Zámostí | Nové Dvory | Horka-Domky | Borovina | Týn | Nové Město | Kočičina | Hájek | Budíkovice | Pocoucov | Ptáčov | Račerovice | Řípov | Slavice | Sokolí | bydlím mimo Třebíč
+
+---
+
 ## ZÁVĚR
 
 *Stránka `page-end` — co uživatel vidí před odesláním.*
