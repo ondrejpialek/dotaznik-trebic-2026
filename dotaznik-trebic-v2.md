@@ -407,7 +407,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ## BLOK N — O VÁS
 
-> *Tyto otázky jsou statistické. Potřebujeme vědět, zda v dotazníku zaznívají různé skupiny obyvatel Třebíče: mladí, rodiče, senioři, ženy i muži. Jen tak poznáme, jestli některé problémy trápí celé město, nebo hlavně konkrétní skupinu lidí. Odpovědi vyhodnocujeme anonymně a v souhrnu. Nikde nesbíráme jméno ani kontakt (pokud jej sami nezadáte na závěr).*
+> *Vysvětlivka v dotazníku: Tyto otázky jsou statistické. Potřebujeme vědět, zda v dotazníku zaznívají různé skupiny obyvatel Třebíče: mladí, rodiče, senioři, ženy i muži. Jen tak poznáme, jestli některé problémy trápí celé město, nebo hlavně konkrétní skupinu lidí. Odpovědi vyhodnocujeme anonymně a v souhrnu. Nikde nesbíráme jméno ani kontakt (pokud jej sami nezadáte na závěr).*
 
 **N1. Jsem:**
 *(radio)*
