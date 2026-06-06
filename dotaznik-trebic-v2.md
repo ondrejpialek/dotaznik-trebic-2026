@@ -99,11 +99,11 @@ jsou definovány v JS v `INTRO_VARIANTS`.*
 **Lead:** Co vás v našem městě štve a co tu naopak máte rádi?
 
 Píšeme volební program pro komunální volby. 
-Vaše odpovědi nám pomůžou program dolaďovat a budou se hodit i pro naši další práci. 
+Vaše odpovědi nám pomůžou program dolaďovat. 
 Když nám necháte e-mail, pošleme vám zajímavá zjištění z dotazníku i hotový program.
 
 
-Vyplnění zabere asi 6 minut a je anonymní.
+Vyplnění zabere asi 5 minut a je anonymní.
 
 **Tlačítko start:** Vyplnit dotazník →
 **Poznámka pod tlačítkem:** Pošlete prosím dotazník dál — čím víc odpovědí, tím přesnější program.
@@ -115,7 +115,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 **A2. Vyberte až 3 pojmy, které by měly vystihovat Třebíč ZA 10 LET.**
 *(checkbox, max 3)*
 
-- živou | mladou | kulturní | bohatou | klidnou | bezpečnou | zelenou | čistou | cenově dostupnou | inovativní | solidární | jinou (s upřesněním)
+- živá | mladá | kulturní | bohatá | klidná | bezpečná | zelená | čistá | cenově dostupná | inovativní | solidární | jiná (s upřesněním)
 
 ---
 
@@ -195,7 +195,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 *(checkbox, vícenásobný výběr)*
 
 - autem (jako řidič/ka)
-- MHD (městské autobusy)
+- MHD
 - na kole nebo koloběžce
 - pěšky (jako hlavní způsob pohybu, nejen přesun na zastávku)
 - jinak (s upřesněním)
@@ -234,7 +234,7 @@ Vyplnění zabere asi 6 minut a je anonymní.
 - rozhodně pro — ulice by měly sloužit lidem, ne parkujícím autům
 - spíše pro, záleží ale na konkrétní části města a dostupnosti alternativ
 - spíše proti — obávám se dopadů na dostupnost parkování
-- rozhodně proti — parkovací místa v centru je nutné zachovat
+- rozhodně proti — parkovací místa v širším centru města je nutné zachovat
 - nemám vyhraněný názor
 
 **E10. Třebíčí denně projíždí tranzitní doprava. Jak důležité je pro vás dokončení obchvatu města?**
@@ -394,13 +394,10 @@ Vyplnění zabere asi 6 minut a je anonymní.
 
 ## BLOK K — TŘEBÍČ OSOBNĚ
 
-**L1. Co si v Třebíči ze všeho nejvíce přejete?**
+**L1. Co vám v Třebíči ze všeho nejvíc chybí?**
 *(volný text, volitelné)*
 
-**L2. Co se v Třebíči v žádném případě nesmí stát?**
-*(volný text, volitelné)*
-
-**L3. Máte nějaký vzkaz nebo téma, které se v dotazníku neobjevilo?**
+**L2. Máte nějaký vzkaz nebo téma, které se v dotazníku neobjevilo?**
 *(volný text, volitelné)*
 
 ---
