@@ -12,7 +12,7 @@ Produkční nasazení: **https://www.jakoutrebic.cz**
 | `save.php` | Endpoint pro průběžné ukládání odpovědí (POST `/save.php`) |
 | `admin.php` | Administrace — výpis odpovědí, detail, agregace, sources |
 | `stats.php` | Veřejné JSON statistiky (počty) |
-| `og_image.png` | Open Graph náhled pro sociální sítě |
+| `FB Banner.png` | Open Graph náhled pro sociální sítě |
 | `dotaznik-trebic-v2.md` | Aktuální podoba dotazníku v Markdownu (refer. dokument) |
 | `prompt-social.md` | Texty pro sdílení |
 
