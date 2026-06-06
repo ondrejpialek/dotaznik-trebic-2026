@@ -1757,13 +1757,11 @@ function doSubmit() {
   const _fbUrl      = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(_utm('facebook'));
   const _msgUrl     = 'fb-messenger://share?link=' + encodeURIComponent(_utm('messenger'));
   const _waUrl      = 'https://wa.me/?text=' + encodeURIComponent(_shareMsg);
-  // TODO: nahraďte odkazy na produkční Facebook/Instagram/Action Network pro Třebíč.
-  const _fbZeleni   = 'https://www.facebook.com/zelenebrno';
-  const _igZeleni   = 'https://www.instagram.com/zelenebrno/';
-  const _kampanUrl  = 'http://actionnetwork.org/forms/kampan-brno/?utm_source=dotaznik';
+  const _fbZeleni   = 'https://www.facebook.com/people/Pir%C3%A1ti-B%C5%99ehy-Zelen%C3%AD/61586888924560/';
+  const _igZeleni   = 'https://www.instagram.com/pirati.brehy.zeleni/';
 
   document.querySelector('.end-card').innerHTML = `
-    <h2>Děkujeme. Vážíme si toho.</h2>
+    <h2>Děkujeme Vám za vyplnění dotazníku. Vážíme si toho.</h2>
     <p style="font-size:15px; color: var(--text-secondary); line-height:1.7;">Vaše odpovědi se promítnou přímo do programu, se kterým půjdeme do komunálních voleb.</p>
 
     <div class="end-section">
@@ -1780,15 +1778,13 @@ function doSubmit() {
     <div class="end-section">
       <h3>Sledujte nás</h3>
       <div class="follow-row">
-        <a class="follow-btn share-btn-fb" href="${_fbZeleni}" target="_blank" rel="noopener">Facebook Zelení Třebíč</a>
-        <a class="follow-btn share-btn-ig" href="${_igZeleni}" target="_blank" rel="noopener">Instagram Zelení Třebíč</a>
+        <a class="follow-btn share-btn-fb" href="${_fbZeleni}" target="_blank" rel="noopener">Facebook</a>
+        <a class="follow-btn share-btn-ig" href="${_igZeleni}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
 
     <div class="end-section">
-      <h3>Chcete nám pomoci v kampani?</h3>
-      <p>Pokud máte chuť pomoct víc — třeba rozdat letáky v sousedství, přijít na otevřenou schůzku nebo nám nabídnout jakoukoli jinou pomoc — dejte nám vědět. Pošleme vám pár konkrétních možností.</p>
-      <a class="end-cta" href="${_kampanUrl}" target="_blank" rel="noopener">Mám zájem →</a>
+      <img src="FB Banner.png" alt="Piráti Břehy Zelení" style="width:100%; height:auto; border-radius: var(--radius-sm); display:block;">
     </div>
 
     <div class="copy-toast" id="copyToast">Odkaz zkopírován ✓</div>
