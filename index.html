@@ -1465,14 +1465,16 @@ function validatePage() {
     if (card.closest('.hidden')) return;
 
     // Radio — at least one must be selected
-    if (card.querySelector('input[type="radio"]')) {
-      if (!card.querySelector('input[type="radio"]:checked')) errors.push(card);
+    const radios = card.querySelectorAll('input[type="radio"]');
+    if (radios.length) {
+      if (![...radios].some(r => r.checked)) errors.push(card);
       return;
     }
 
     // Checkbox — at least one must be checked
-    if (card.querySelector('input[type="checkbox"]')) {
-      if (!card.querySelector('input[type="checkbox"]:checked')) errors.push(card);
+    const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+    if (checkboxes.length) {
+      if (![...checkboxes].some(cb => cb.checked)) errors.push(card);
       return;
     }
 
