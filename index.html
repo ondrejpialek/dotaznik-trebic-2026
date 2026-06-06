@@ -1448,73 +1448,53 @@ const PAGES = [
 const CONTENT_PAGES = PAGES.slice(1, -1); // exclude intro + end
 let currentIdx = 0;
 
-// ─── Required fields per page ─────────────────────────────────────
-// type: 'radio' | 'checkbox' | 'textarea'
-// visibleCheck: id of element — skip validation if that element has .hidden
-const REQUIRED = {
-  'page-a': [],
-  'page-b': [],
-  'page-c': [
-    { type: 'checkbox', name: 'c1' },
-  ],
-  'page-d': [],
-  'page-e': [],
-  'page-f': [],
-  'page-g': [
-    { type: 'checkbox', name: 'g0' }, // větví celý blok G
-  ],
-  'page-j': [],
-  'page-h': [],
-  'page-i': [],
-  'page-l': [],
-  'page-n': [],
-};
-
-function isVisible(elId) {
-  const el = document.getElementById(elId);
-  return el && !el.classList.contains('hidden');
-}
+// ─── Validation ───────────────────────────────────────────────────
+// Generically validates all visible .question/.gateway-card elements on the
+// current page. Only radio, checkbox and select inputs are required; textarea-
+// only questions remain optional. Hidden/conditional questions are skipped.
 
 function validatePage() {
-  const pageId = PAGES[currentIdx];
-  const fields = REQUIRED[pageId] || [];
+  const pageEl = document.getElementById(PAGES[currentIdx]);
   const errors = [];
 
   // Clear previous errors
   document.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
 
-  for (const field of fields) {
-    if (field.visibleCheck && !isVisible(field.visibleCheck)) continue;
+  pageEl.querySelectorAll('.question, .gateway-card').forEach(card => {
+    // Skip if the card itself or any ancestor carries .hidden
+    if (card.closest('.hidden')) return;
 
-    let ok = false;
-    if (field.type === 'radio') {
-      ok = !!document.querySelector(`input[name="${field.name}"]:checked`);
-    } else if (field.type === 'checkbox') {
-      ok = document.querySelectorAll(`input[name="${field.name}"]:checked`).length >= (field.min || 1);
-    } else if (field.type === 'textarea') {
-      ok = (document.getElementById(field.elId)?.value.trim().length || 0) > 0;
+    // Radio — at least one must be selected
+    const radios = card.querySelectorAll('input[type="radio"]');
+    if (radios.length) {
+      if (![...radios].some(r => r.checked)) errors.push(card);
+      return;
     }
 
-    if (!ok) errors.push(field);
-  }
+    // Checkbox — at least one must be checked
+    const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+    if (checkboxes.length) {
+      if (![...checkboxes].some(cb => cb.checked)) errors.push(card);
+      return;
+    }
+
+    // Select — must have a non-empty value
+    const sel = card.querySelector('select');
+    if (sel) {
+      if (!sel.value) errors.push(card);
+      return;
+    }
+
+    // Textarea / text only → optional, no validation
+  });
 
   // Highlight errors
-  errors.forEach(field => {
-    let anchor;
-    if (field.type === 'textarea') {
-      anchor = document.getElementById(field.elId);
-    } else {
-      anchor = document.querySelector(`input[name="${field.name}"]`);
-    }
-    const card = anchor?.closest('.question, .gateway-card');
-    if (card) card.classList.add('has-error');
-  });
+  errors.forEach(card => card.classList.add('has-error'));
 
   if (errors.length > 0) {
     // Scroll to first error
-    const firstCard = document.querySelector('.has-error');
-    if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+    document.querySelector('.has-error')
+      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     const msg = document.getElementById('errorMsg');
     msg.textContent = 'Prosím vyplňte označená pole.';
     msg.classList.remove('hidden');
@@ -1864,6 +1844,11 @@ function setupOptionStyling() {
     ta.addEventListener('input', () => clearError(ta));
   });
 
+  // Clear error on select change
+  document.querySelectorAll('select').forEach(sel => {
+    sel.addEventListener('change', () => clearError(sel));
+  });
+
   // Semantic diff styling
   document.querySelectorAll('.sd-option input').forEach(inp => {
     inp.addEventListener('change', () => {
@@ -2003,29 +1988,19 @@ on('input[name="i1"]', 'change', () => {
   toggle('i2-question', v === 'spíše nebezpečně' || v === 'velmi nebezpečně');
 });
 
-// ─── Init ─────────────────────────────────────────────────────────
-// ─── Question metadata: reasoning + required flag ─────────────────
-// Key = prefix that uniquely identifies the question-text
-const QUESTION_META = {
-  'C1.':  { required: true },
-  'G0.':  { required: true },
-};
-
 // ─── Inject required marks ────────────────────────────────────────
+// Automatically mark every visible question that contains a radio, checkbox or
+// select input as required. Textarea-only questions stay unmarked (optional).
 function setupQuestionAnnotations() {
-  document.querySelectorAll('.question-text').forEach(el => {
-    const text = el.textContent.trim();
-    for (const [prefix, meta] of Object.entries(QUESTION_META)) {
-      if (!text.startsWith(prefix)) continue;
-      if (meta.required) {
-        const star = document.createElement('span');
-        star.className = 'required-mark';
-        star.textContent = '*';
-        star.title = 'Povinná otázka';
-        el.appendChild(star);
-      }
-      break;
-    }
+  document.querySelectorAll('.question, .gateway-card').forEach(card => {
+    if (!card.querySelector('input[type="radio"], input[type="checkbox"], select')) return;
+    const textEl = card.querySelector('.question-text');
+    if (!textEl) return;
+    const star = document.createElement('span');
+    star.className = 'required-mark';
+    star.textContent = '*';
+    star.title = 'Povinná otázka';
+    textEl.appendChild(star);
   });
 }
 
