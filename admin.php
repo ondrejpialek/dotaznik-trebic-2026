@@ -403,8 +403,6 @@ function urlWith($overrides = []) {
   .topbar .tabs a.active { background: rgba(255,255,255,.18); color: #fff; }
   .topbar .tabs a:hover { color: #fff; }
   .topbar .right a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; }
-  .magic-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 16px; line-height: 1; padding: 6px 10px; border-radius: 8px; cursor: pointer; margin-right: 12px; vertical-align: middle; }
-  .magic-btn:hover { background: rgba(255,255,255,.22); }
 
   .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
   .stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
@@ -515,7 +513,6 @@ function urlWith($overrides = []) {
     <a href="<?= htmlspecialchars(urlWith(['view'=>'sources', 'p'=>null, 'id'=>null, 'qid'=>null, 'q'=>null, 'status'=>null])) ?>" class="<?= $view==='sources'?'active':'' ?>">Sources</a>
   </div>
   <div class="right">
-    <button type="button" id="confettiBtn" class="magic-btn" title="✨" aria-label="Kouzlo">🪄</button>
     <a href="?logout=1">Odhlásit se</a>
   </div>
 </div>
@@ -571,6 +568,7 @@ function urlWith($overrides = []) {
         <td><?= htmlspecialchars($r['updated_at']) ?></td>
         <td class="row-actions">
           <a class="icon-btn" href="<?= htmlspecialchars(urlWith(['id'=>$r['id']])) ?>" title="Detail" aria-label="Detail">🔍</a>
+          <button type="button" class="icon-btn confetti-btn" title="Kouzlo ✨" aria-label="Kouzlo">🪄</button>
           <form method="post" class="del-form" onsubmit="return confirm('Opravdu chcete záznam #<?= (int)$r['id'] ?> nenávratně smazat?');">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
             <input type="hidden" name="delete_id" value="<?= (int)$r['id'] ?>">
@@ -791,9 +789,10 @@ function urlWith($overrides = []) {
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
   (function () {
-    var btn = document.getElementById('confettiBtn');
-    if (!btn || typeof confetti !== 'function') return;
-    btn.addEventListener('click', function () {
+    if (typeof confetti !== 'function') return;
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('.confetti-btn');
+      if (!btn) return;
       var end = Date.now() + 800;
       (function frame() {
         confetti({ particleCount: 5, angle: 60,  spread: 55, origin: { x: 0 } });
