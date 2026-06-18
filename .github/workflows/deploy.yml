@@ -24,6 +24,6 @@ jobs:
             set net:max-retries 5;
             set net:reconnect-interval-base 5;
             open -u 'www.jakoutrebic.cz','$FTP_PASSWORD' ftp://ftpx.forpsi.com;
-            mirror -R --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob '*.md' ./ /www/;
+            mirror -R --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob '*.md' --exclude-glob 'tests/' ./ /www/;
             bye
           "

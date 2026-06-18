@@ -80,6 +80,27 @@ try {
     die('Databáze není dostupná: ' . $e->getMessage());
 }
 
+// ── CSRF token pro destruktivní akce (mazání) ─────────────────────
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+
+// ── Smazání záznamu ───────────────────────────────────────────────
+require __DIR__ . '/delete-response.php';
+if (isset($_POST['delete_id'])) {
+    if (!hash_equals($_SESSION['csrf'], (string)($_POST['csrf'] ?? ''))) {
+        http_response_code(400);
+        die('Neplatný požadavek (CSRF).');
+    }
+    deleteResponseById($db, (int)$_POST['delete_id']);
+
+    // Zpět na seznam se zachovanými filtry; detail zavřeme (smazaný záznam už neexistuje).
+    $ret = (string)($_POST['return'] ?? 'admin.php');
+    if (!preg_match('#^admin\.php(\?|$)#', $ret)) $ret = 'admin.php';
+    header('Location: ' . $ret);
+    exit;
+}
+
 // ── Slovník otázek (jednorázový extrakt z index.html) ────────────
 $BLOCKS = [
   'a' => 'A — Třebíč za 10 let',
@@ -394,6 +415,12 @@ function urlWith($overrides = []) {
   .btn-primary { background: #557A53; color: #fff; }
   .btn-outline { background: #fff; color: #333; border: 1px solid #ddd; }
   .btn:hover { opacity: .85; }
+  .row-actions { white-space: nowrap; text-align: right; }
+  .row-actions .del-form { display: inline; margin: 0; }
+  .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border: 1px solid #ddd; border-radius: 8px; background: #fff; color: #333; font-size: 16px; line-height: 1; cursor: pointer; text-decoration: none; vertical-align: middle; }
+  .icon-btn + .icon-btn, .icon-btn + .del-form { margin-left: 6px; }
+  .icon-btn:hover { background: #f5f5f1; }
+  .icon-btn-danger:hover { background: #fdecea; border-color: #f5c6cb; }
   .chips { display: flex; gap: 6px; }
   .chip { padding: 7px 13px; border-radius: 999px; font-size: 13px; text-decoration: none; background: #fff; color: #333; border: 1px solid #ddd; }
   .chip.active { background: #557A53; color: #fff; border-color: #557A53; }
@@ -537,7 +564,15 @@ function urlWith($overrides = []) {
         <td><?= htmlspecialchars($r['last_page'] ?? '—') ?></td>
         <td><?= htmlspecialchars($r['email'] ?? '—') ?></td>
         <td><?= htmlspecialchars($r['updated_at']) ?></td>
-        <td><a class="btn btn-outline" href="<?= htmlspecialchars(urlWith(['id'=>$r['id']])) ?>">Detail</a></td>
+        <td class="row-actions">
+          <a class="icon-btn" href="<?= htmlspecialchars(urlWith(['id'=>$r['id']])) ?>" title="Detail" aria-label="Detail">🔍</a>
+          <form method="post" class="del-form" onsubmit="return confirm('Opravdu chcete záznam #<?= (int)$r['id'] ?> nenávratně smazat?');">
+            <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
+            <input type="hidden" name="delete_id" value="<?= (int)$r['id'] ?>">
+            <input type="hidden" name="return" value="<?= htmlspecialchars(urlWith(['id'=>null])) ?>">
+            <button type="submit" class="icon-btn icon-btn-danger" title="Smazat záznam" aria-label="Smazat záznam">🗑️</button>
+          </form>
+        </td>
       </tr>
     <?php endforeach; ?>
     <?php if (empty($rows)): ?>

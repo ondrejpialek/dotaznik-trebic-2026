@@ -50,7 +50,7 @@ Heslem chráněná stránka pro tým Zelených.
 
 **Záložky v topbaru:**
 
-- **Respondenti** — seznam s filtrem stavu (Všechny / Kompletní / Rozpracované) a fulltextovým hledáním v odpovědích a e-mailu. Detail otevřený přes řádek zobrazí odpovědi seskupené po blocích, s plným zněním otázek a navigací **← / →** mezi respondenty (klávesnice taky).
+- **Respondenti** — seznam s filtrem stavu (Všechny / Kompletní / Rozpracované) a fulltextovým hledáním v odpovědích a e-mailu. U každého řádku je ikona 🔍 (Detail — popis při najetí kurzorem) a 🗑️ (smazat záznam — po potvrzovacím dotazu, CSRF-chráněné). Detail otevřený přes ikonu zobrazí odpovědi seskupené po blocích, s plným zněním otázek a navigací **← / →** mezi respondenty (klávesnice taky).
 - **Po otázkách** — pohled „shora": vlevo seznam všech otázek s počty odpovědí, vpravo plné znění otázky + souhrn voleb (počty + %, seřazeno desc) a všechny jednotlivé odpovědi pod sebou.
 - **Sources** — UTM rozpad ve třech tabulkách (utm_source / utm_medium / utm_campaign): počet odpovědí, podíl, kompletní/rozpracované, počet s e-mailem.
 
@@ -63,6 +63,14 @@ php -S 127.0.0.1:8000 -t .
 ```
 
 Pak otevřít http://127.0.0.1:8000/. Pro test admin/save je třeba mít zapisovatelný `../dotaznik.db` v rodičovské složce (vznikne automaticky při prvním uložení).
+
+## Testy
+
+```bash
+php tests/DeleteResponseTest.php
+```
+
+Ověřuje, že `deleteResponseById()` (z `delete-response.php`) maže právě jeden záznam a žádný další.
 
 ## Nasazení
 
