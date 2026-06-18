@@ -403,6 +403,8 @@ function urlWith($overrides = []) {
   .topbar .tabs a.active { background: rgba(255,255,255,.18); color: #fff; }
   .topbar .tabs a:hover { color: #fff; }
   .topbar .right a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; }
+  .magic-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 16px; line-height: 1; padding: 6px 10px; border-radius: 8px; cursor: pointer; margin-right: 12px; vertical-align: middle; }
+  .magic-btn:hover { background: rgba(255,255,255,.22); }
 
   .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
   .stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
@@ -512,7 +514,10 @@ function urlWith($overrides = []) {
     <a href="<?= htmlspecialchars(urlWith(['view'=>'byq', 'p'=>null, 'id'=>null])) ?>" class="<?= $view==='byq'?'active':'' ?>">Po otázkách</a>
     <a href="<?= htmlspecialchars(urlWith(['view'=>'sources', 'p'=>null, 'id'=>null, 'qid'=>null, 'q'=>null, 'status'=>null])) ?>" class="<?= $view==='sources'?'active':'' ?>">Sources</a>
   </div>
-  <div class="right"><a href="?logout=1">Odhlásit se</a></div>
+  <div class="right">
+    <button type="button" id="confettiBtn" class="magic-btn" title="✨" aria-label="Kouzlo">🪄</button>
+    <a href="?logout=1">Odhlásit se</a>
+  </div>
 </div>
 
 <div class="wrap">
@@ -781,6 +786,24 @@ function urlWith($overrides = []) {
   });
 </script>
 <?php endif; ?>
+
+<!-- 🪄 Velikonoční vajíčko: konfety přes canvas-confetti z CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('confettiBtn');
+    if (!btn || typeof confetti !== 'function') return;
+    btn.addEventListener('click', function () {
+      var end = Date.now() + 800;
+      (function frame() {
+        confetti({ particleCount: 5, angle: 60,  spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+      confetti({ particleCount: 120, spread: 90, origin: { y: 0.6 } });
+    });
+  })();
+</script>
 
 </body>
 </html>
