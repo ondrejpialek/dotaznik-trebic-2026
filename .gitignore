@@ -2,6 +2,7 @@
 *.db-journal
 *.db-shm
 *.db-wal
+/backup/
 .env
 .env.*
 .DS_Store
