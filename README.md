@@ -1,6 +1,6 @@
-# V jaké Třebíči chcete žít? — dotazník Zelených Třebíč 2026
+# V jaké Třebíči chcete žít? — výsledky ankety Třebíč 2026
 
-Online dotazník pro sběr podnětů od obyvatel Třebíče. Z odpovědí vznikne volebí program Zelených pro komunální volby v říjnu 2026.
+Veřejné výsledky uzavřené ankety o životě v Třebíči. Podněty byly sbírány pro přípravu komunálního programu; původní formulář je zachován pouze v archivu repozitáře.
 
 Produkční nasazení: **https://www.jakoutrebic.cz**
 
@@ -8,13 +8,22 @@ Produkční nasazení: **https://www.jakoutrebic.cz**
 
 | Soubor | Účel |
 |---|---|
-| `index.html` | Single-page dotazník (HTML + CSS + vanilla JS) |
+| [index.html](index.html) | Veřejná úvodní stránka s výsledky: grafy, tabulky a anonymizované souhrny |
+| [report/dotaznik-archiv.html](report/dotaznik-archiv.html) | Původní dotazník beze změn, pouze archivní a analytický podklad; nenasazuje se |
 | `save.php` | Endpoint pro průběžné ukládání odpovědí (POST `/save.php`) |
 | `admin.php` | Administrace — výpis odpovědí, detail, agregace, sources |
 | `stats.php` | Veřejné JSON statistiky (počty) |
 | `FB Banner.png` | Open Graph náhled pro sociální sítě |
 | `dotaznik-trebic-v2.md` | Aktuální podoba dotazníku v Markdownu (refer. dokument) |
 | `prompt-social.md` | Texty pro sdílení |
+| [metodika.html](metodika.html) | Stručná veřejná metodika a ochrana soukromí |
+| [report/README.md](report/README.md) | Analýza, Markdownové podklady, sestavení a testování výsledkového webu |
+
+## Výsledkový web
+
+Výsledky jsou úvodní stránkou [index.html](index.html) a nahradily původní sběrný formulář. Obsahují všech 31 otázek s volbami a 17 anonymizovaných textových souhrnů bez redakčního výběru „nejdůležitějších“ odpovědí. Krátké vysvětlení zpracování je na [metodika.html](metodika.html); navigace i návratové tlačítko vedou na výsledkovou homepage.
+
+Veřejné HTML se sestavuje příkazem `python -X utf8 report/build_ui.py` pouze z připravených Markdownových podkladů. Na hostingu nepotřebuje Python, Node, SQLite ani aplikační endpointy. [Archiv dotazníku](report/dotaznik-archiv.html) byl pouze přejmenován a přesunut; jeho odkazy a funkčnost se dále neudržují. Postup úprav a prohlížečových testů popisuje [report/README.md](report/README.md).
 
 ## Datový model
 
@@ -35,9 +44,9 @@ responses (
 
 `save.php` provádí UPSERT podle `uuid` — odpovědi se ukládají průběžně po každé stránce, takže neztratíme rozpracované dotazníky.
 
-## Frontend
+## Původní frontend (archiv)
 
-- Vanilla JS, žádný build step. Pouze `index.html`.
+- Vanilla JS bez build kroku, nyní pouze v [report/dotaznik-archiv.html](report/dotaznik-archiv.html); již není veřejnou úvodní stránkou.
 - Stránkový průvodce s navigací **← Zpět / Pokračovat →**.
 - UUID respondenta v `localStorage` (klíč `dotaznikUuid`).
 - UTM parametry se sbírají z URL (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) a ukládají do `data` JSONu.
@@ -54,7 +63,7 @@ Heslem chráněná stránka pro tým Zelených.
 - **Po otázkách** — pohled „shora": vlevo seznam všech otázek s počty odpovědí, vpravo plné znění otázky + souhrn voleb (počty + %, seřazeno desc) a všechny jednotlivé odpovědi pod sebou.
 - **Sources** — UTM rozpad ve třech tabulkách (utm_source / utm_medium / utm_campaign): počet odpovědí, podíl, kompletní/rozpracované, počet s e-mailem.
 
-CSV export přes `?csv=1`. Slovník otázek (`$QUESTIONS` v `admin.php`) je hardcoded — jednorázový extrakt z `index.html` (otázky se už nemění).
+CSV export přes `?csv=1`. Slovník otázek (`$QUESTIONS` v `admin.php`) je hardcoded — historický jednorázový extrakt z původního formuláře, nyní uloženého v [report/dotaznik-archiv.html](report/dotaznik-archiv.html).
 
 ## Lokální vývoj
 
@@ -75,6 +84,7 @@ Ověřuje, že `deleteResponseById()` (z `delete-response.php`) maže právě je
 ## Nasazení
 
 - Statický `index.html` + PHP endpointy (`save.php`, `admin.php`, `stats.php`) běží přímo na sdíleném hostingu.
+- Homepage nyní publikuje výsledky; metodika a veřejné assets se nasazují spolu s ní. Archiv dotazníku, interní report i zálohy jsou z FTP nasazení vyloučeny. Původní PHP endpointy nebyly touto změnou upraveny.
 - Databázový soubor `dotaznik.db` patří **mimo webový kořen** (`../dotaznik.db`) — viz cesty v `save.php` a `admin.php`.
 - `save.php` má CORS hlavičku omezenou na `https://www.jakoutrebic.cz`.
 

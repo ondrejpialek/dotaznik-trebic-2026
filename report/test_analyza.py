@@ -28,6 +28,11 @@ class QuestionnaireTests(unittest.TestCase):
         self.assertEqual(31, sum(q.kind != "text" for q in self.questions))
         self.assertEqual(17, sum(q.kind == "text" for q in self.questions))
 
+    def test_questionnaire_is_archived_separately_from_results(self):
+        self.assertEqual(analyza.REPORT / "dotaznik-archiv.html", analyza.HTML)
+        self.assertTrue(analyza.HTML.is_file())
+        self.assertNotEqual(analyza.ROOT / "index.html", analyza.HTML)
+
     def test_real_form_wording_and_stored_alias(self):
         self.assertTrue(self.by_key["l3"].label.startswith("L2."))
         self.assertNotIn("l2", self.by_key)
@@ -229,6 +234,12 @@ class PrivacyTests(unittest.TestCase):
 
 
 class MarkdownSnapshotTests(unittest.TestCase):
+    @staticmethod
+    def report_markdown():
+        # Inspect our report and working paraphrases, not vendor documentation
+        # or browser-test artifacts under the same development directory.
+        return sorted(analyza.REPORT.glob("*.md")) + sorted((analyza.REPORT / "odpovedi").glob("*.md"))
+
     EXPECTED_TEXT_COUNTS = {
         "a2-other": 1, "b2-other": 15, "c1b": 35, "d2-other": 4,
         "e1-other": 2, "e2-other": 6, "e3b": 50, "e4b": 9,
@@ -252,13 +263,13 @@ class MarkdownSnapshotTests(unittest.TestCase):
             r"\+420[\s-]*\d",
             r"\b(?:č\.?\s*p\.?|číslo\s+domu)\s*\d",
         ]
-        for path in analyza.REPORT.rglob("*.md"):
+        for path in self.report_markdown():
             text = path.read_text(encoding="utf-8")
             for pattern in patterns:
                 self.assertIsNone(re.search(pattern, text, flags=re.I), path.name)
 
     def test_all_local_markdown_links_exist(self):
-        for path in analyza.REPORT.rglob("*.md"):
+        for path in self.report_markdown():
             for destination in re.findall(r"\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
                 if "://" in destination or destination.startswith("#"):
                     continue

@@ -2,7 +2,7 @@
 
 ## Kde začít
 
-**[VYSLEDKY.md](VYSLEDKY.md)** je český obsahový report pro účastníky ankety a další třebíčskou veřejnost. Obsahuje interpretaci všech otázek a souhrny otevřených odpovědí. UI zatím není implementováno.
+**[VYSLEDKY.md](VYSLEDKY.md)** je český obsahový report s interpretací všech otázek a souhrny otevřených odpovědí. Veřejné UI tvoří výsledková homepage [index.html](../index.html) a krátká [metodika.html](../metodika.html); redakční výběr hlavních zjištění zatím není součástí webu.
 
 | Soubor | Úloha |
 |---|---|
@@ -12,9 +12,29 @@
 | [METODIKA.md](METODIKA.md) | Výběr odpovědí, jmenovatele, větvení, omezení a ochrana soukromí. |
 | [KONTROLA-DAT.md](KONTROLA-DAT.md) | Vygenerované kontrolní součty, pokrytí, větvení a kvalita dat. |
 | [analyza.py](analyza.py) | Reprodukovatelná agregace ze SQLite otevřené pouze pro čtení; Python 3.10+, bez externích knihoven. |
+| [dotaznik-archiv.html](dotaznik-archiv.html) | Původní dotazník přesunutý beze změny obsahu; autoritativní znění možností pro analýzu, nikoli veřejná stránka. |
 | [test_analyza.py](test_analyza.py) | Testy analýzy a konzistence pracovních podkladů. |
+| [web-texty.md](web-texty.md) | Krátký veřejný úvod, stručná metodika a neutrální souhrny všech textových polí; žádné individuální parafráze. |
+| [build_ui.py](build_ui.py) | Sestavení dvou statických veřejných stránek pouze z Markdownu a HTML šablony. |
+| [test_build_ui.py](test_build_ui.py) | Kontrola všech publikovaných četností, popisků, jmenovatelů, textových polí a bezpečného escapování. |
 
-Výchozí záloha obsahuje **187 dotazníků: 144 dokončených a 43 rozpracovaných**. Datum založení záznamů v záloze sahá od 16. 6. do 7. 10. 2026; toto není nezávisle ověřené vymezení období veřejného sběru. Kontrolní součet zálohy je uveden v technické kontrole. Databáze nebyla upravena.
+## Veřejné UI – první verze
+
+- Dlouhá stránka se všemi otázkami, navigací po tématech, jednoduchými vodorovnými grafy a rozbalovacími tabulkami včetně dokončené podmnožiny. Všechny malé i nulové kategorie zůstávají dostupné.
+- Otevřené otázky mají neutrální tematické souhrny ze [web-texty.md](web-texty.md), nikoli jednotlivé řádky pracovních souborů. Publicistické komentáře a hlavní zjištění z delšího reportu se nyní do webu nepřebírají.
+- Stránky fungují bez JavaScriptu; skript přidává pouze rozbalení všech tabulek, tisk a označení aktuálního tématu. Nevytváří kontakty, cookies či lokální profily a nevolá PHP/SQL endpointy. Písmo Sofia Sans je u nových stránek hostované lokálně včetně licence; všechny soubory potřebné k zobrazení pocházejí ze stejného webu.
+- Výsledky nahradily původní úvodní stránku. Dotazník je přesunut beze změny obsahu do [dotaznik-archiv.html](dotaznik-archiv.html); jeho funkčnost ani relativní odkazy se dále neopravují. Analýza čte archiv, nikoli novou homepage. Celý interní report včetně archivu zůstává vyloučen z nasazení.
+- Obsah se mění v Markdownu a vzhled v [assets/vysledky.css](../assets/vysledky.css), [assets/vysledky.js](../assets/vysledky.js) a [templates/public.html](templates/public.html). Vygenerované stránky se neupravují ručně.
+
+Sestavení z kořene repozitáře: `python -X utf8 report/build_ui.py`. Kontrola bez přepisu: `python -X utf8 report/build_ui.py --check`. Sestavení čte pouze agregovaný Markdown, veřejné texty a šablonu; nepotřebuje databázi, původní HTML dotazníku ani individuální pracovní odpovědi.
+
+Stránku lze otevřít přímo ze souboru. Pro HTTP náhled slouží `python -X utf8 report/preview.py`: naslouchá pouze na lokálním počítači na portu 8765, na kořenové adrese zobrazuje výsledky a zpřístupňuje výhradně veřejné stránky a jejich assets, nikoli archiv, zálohy nebo celý repozitář.
+
+Prohlížečové testy a automatické kontroly přístupnosti: po `npm ci --prefix report` spustit `npm run --prefix report test:ui`. Používají instalovaný Microsoft Edge a projektový Node 22 (bez změny systémového Node nebo PATH); testovací HTTP server se spouští a ukončuje automaticky. NPM závislosti jsou jen pro vývoj a do veřejného webu se nekopírují.
+
+Písmo je převzato beze změn z balíčku Fontsource pod licencí SIL OFL 1.1. Dva potřebné latinkové soubory a licence jsou ve veřejných assets, takže samotné sestavení stránek nepotřebuje NPM. Pro obnovu z uzamčeného balíčku po instalaci závislostí slouží `python -X utf8 report/prepare_assets.py`, pro porovnání `python -X utf8 report/prepare_assets.py --check`.
+
+Výchozí záloha obsahuje **187 odpovědí na dotazník: 144 dokončených a 43 rozpracovaných**. Datum založení záznamů v záloze sahá od 16. 6. do 7. 10. 2026; toto není nezávisle ověřené vymezení období veřejného sběru. Kontrolní součet zálohy je uveden v technické kontrole. Databáze nebyla upravena.
 
 ## Podklady k otevřeným otázkám
 
@@ -56,7 +76,7 @@ Pomocný režim `review` sloužil pro lokální redakční čtení po otázkách
 
 ## Zveřejnění a nasazení
 
-- Budoucí UI má čerpat z reportu, agregovaných tabulek a metodiky; nikoli z per-respondentových dat, která zde nejsou.
+- Veřejné UI čerpá z agregovaných tabulek a veřejných Markdownových textů; nikoli z per-respondentových dat. Interní pracovní podklady se nenasazují.
 - Samostatné kvantitativní tabulky zachovávají všechny původní možnosti, včetně malých a nulových četností v N3/N4/N5. Žádné kategorie se neslučují jen kvůli nízkému počtu. Souhrnné ukazatele jsou doplněk, ne náhrada detailu; individuální odpovědi a jejich propojení se nezveřejňují.
 - Analyzační složka i zálohy jsou explicitně vyloučeny z [FTP nasazení](../.github/workflows/deploy.yml); nepublikují se tím automaticky skripty, pracovní podklady ani případné zálohy přítomné v pracovním adresáři nasazení. Zálohy jsou navíc ignorované Gitem. Původní nasazení již vylučovalo Markdown, ale ne ostatní soubory tohoto prostoru.
 - Kontrolní součty zdrojů a technická metadata zůstávají pouze v interní kontrole dat; veřejné datové tabulky je neobsahují.

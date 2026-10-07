@@ -22,7 +22,7 @@ import sqlite3
 ROOT = Path(__file__).resolve().parent.parent
 REPORT = ROOT / "report"
 DATABASE = ROOT / "backup" / "dotaznik.db"
-HTML = ROOT / "index.html"
+HTML = REPORT / "dotaznik-archiv.html"
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
 
